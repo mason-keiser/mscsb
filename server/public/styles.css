@@ -134,6 +134,13 @@ body, * {
     .logoCont > img {
         width: 90vw;
     }
+    .viewBtn {
+        margin-bottom: 0;
+    }
+
+    .logoCont > img {
+        width: 65vw;
+    }
 }
 
 @media screen and (orientation: landscape) and (max-height: 440px) {
@@ -141,8 +148,19 @@ body, * {
         height: 50vh;
         top: -50vh;
     }
-
+    .logoCont > img {
+        width: 40vw;
+    }
     .viewBtn {
         margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 340px) {
+    .menuBtn {
+        position: sticky;
+    }
+    .logoCont > img {
+        width: 35vw;
     }
 }
