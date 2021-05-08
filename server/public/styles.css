@@ -92,8 +92,7 @@ body, * {
     height: 30vh;
     width: 100vw;
     transition: top 1s;
-    border-bottom: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+    border-bottom: 2px solid black;
 }  
 
 .side.open {
@@ -107,7 +106,7 @@ body, * {
 
 #menuUp {
     margin-top: 0.5rem;
-    font-size: xx-large;
+    font-size: x-large;
     cursor: pointer;
 }
 
