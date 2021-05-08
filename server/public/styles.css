@@ -4,16 +4,122 @@ body, * {
 }
 
 .landingCont {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
 }
 
 .logoCont {
     height: inherit;
     width: inherit;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.copyCont {
+    display: flex;
+    align-items: center;    
+    position: fixed;
+    bottom: 80px;
+    left: -50px;
+    transform: rotate(-90deg);
+    transform-origin:  bottom; 
+}
+
+.copyCont > div {
+    width: 150px;
+    height: 3px;
+    background: black;    
+}
+
+.copyCont > h5 {
+    margin-left: 5px;
+}
+
+.shopCont {
+    display: flex;
+    align-items: center;    
+    position: fixed;
+    top: 80px;
+    right: -50px;
+    transform: rotate(90deg);
+    transform-origin:  top;
+
+}
+
+.shopCont > div {
+    width: 150px;
+    height: 3px;
+    background: black;    
+}
+
+.shopCont > h5 {
+    margin-left: 5px;
+}
+
+.menuBtn {
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid black;  
+    cursor: pointer;
+    margin: auto;  
+    margin-top: 1rem;
+    width: 100px;
+    align-items: center;
+}
+
+.menuBtn:hover {
+    opacity: 70%;
+}
+
+.viewBtn:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.side {
+    color: black;
+    z-index: 999;
+    position: absolute;
+    top: -40vh;
+    background: black;
+    display: flex;
+    background: rgba(255, 255, 255, 1);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30vh;
+    width: 100vw;
+    transition: top 2s;
+}  
+
+.side.open {
+    top: 0px;
+}
+
+.side > h4:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+#menuUp {
+    margin-top: 1rem;
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+#menuUp:hover {
+    opacity: 70%;
+}
+
+@media screen and (max-width: 430px) {
+    .copyCont {
+        left: -100px;
+    }
+    .shopCont {
+        right: -100px;
+    }
 }
 
 @media screen and (max-width: 330px) {
