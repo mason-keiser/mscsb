@@ -92,7 +92,7 @@ body, * {
     height: 30vh;
     width: 100vw;
     transition: top 1s;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
 }  
 
