@@ -126,6 +126,9 @@ body, * {
     .viewBtn {
         margin-bottom: 4rem;
     }
+    .logoCont > img {
+        width: 70vw;
+    }
 }
 
 @media screen and (max-width: 330px) {
