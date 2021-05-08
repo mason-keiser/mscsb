@@ -106,7 +106,7 @@ body, * {
 }
 
 #menuUp {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     font-size: xx-large;
     cursor: pointer;
 }
