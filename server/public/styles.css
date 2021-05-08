@@ -81,7 +81,7 @@ body, * {
 .side {
     color: black;
     z-index: 999;
-    position: absolute;
+    position: fixed;
     top: -40vh;
     background: black;
     display: flex;
@@ -91,7 +91,9 @@ body, * {
     align-items: center;
     height: 30vh;
     width: 100vw;
-    transition: top 2s;
+    transition: top 1s;
+    border-bottom: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
 }  
 
 .side.open {
@@ -120,10 +122,25 @@ body, * {
     .shopCont {
         right: -100px;
     }
+
+    .viewBtn {
+        margin-bottom: 4rem;
+    }
 }
 
 @media screen and (max-width: 330px) {
     .logoCont > img {
         width: 90vw;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 440px) {
+    .side {
+        height: 50vh;
+        top: -50vh;
+    }
+
+    .viewBtn {
+        margin-bottom: 0.5rem;
     }
 }
