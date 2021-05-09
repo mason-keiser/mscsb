@@ -20,7 +20,7 @@ const Landing = (props) => {
             </div>
             <div className='shopCont'>
                 <div></div>
-                <h5> Go To Surf Shop</h5>
+                <a href="https://mss.masonkeiser.com">Go To Surf Shop</a>
             </div>
             <div className='menuBtn' onClick={() => handleMenu()}>
                 Menu
@@ -33,7 +33,7 @@ const Landing = (props) => {
             </div>
             <div className='logoCont'>
                 <img src="/images/logo4bw.png" alt=""/>
-                <h3 className='viewBtn'>View Beaches</h3>
+                <Link to='/map'>View Beaches</Link>
             </div>
         </div>
     )

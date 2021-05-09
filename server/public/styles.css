@@ -17,6 +17,15 @@ body, * {
     align-items: center;
 }
 
+.logoCont > a {
+    text-decoration: none;
+    color: black;
+}
+
+.logoCont > a:hover {
+    opacity: 60%;
+}
+
 .copyCont {
     display: flex;
     align-items: center;    
@@ -34,6 +43,7 @@ body, * {
 }
 
 .copyCont > h5 {
+    font-size: small;
     margin-left: 5px;
 }
 
@@ -45,7 +55,6 @@ body, * {
     right: -50px;
     transform: rotate(90deg);
     transform-origin:  top;
-
 }
 
 .shopCont > div {
@@ -54,8 +63,15 @@ body, * {
     background: black;    
 }
 
-.shopCont > h5 {
+.shopCont > a {
     margin-left: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: small;
+}
+
+.shopCont > a:hover {
+    opacity: 60%;
 }
 
 .menuBtn {
@@ -70,12 +86,12 @@ body, * {
 }
 
 .menuBtn:hover {
-    opacity: 70%;
+    opacity: 60%;
 }
 
 .viewBtn:hover {
     cursor: pointer;
-    opacity: 70%;
+    opacity: 60%;
 }
 
 .side {
@@ -105,7 +121,7 @@ body, * {
 }
 
 .side > a:hover {
-    opacity: 70%;
+    opacity: 60%;
     cursor: pointer;
 }
 
