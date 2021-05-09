@@ -99,7 +99,12 @@ body, * {
     top: 0px;
 }
 
-.side > h4:hover {
+.side > a {
+    text-decoration: none;    
+    color: black;
+}
+
+.side > a:hover {
     opacity: 70%;
     cursor: pointer;
 }

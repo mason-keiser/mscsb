@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const Landing = (props) => {
 
@@ -25,9 +26,9 @@ const Landing = (props) => {
                 Menu
             </div>
             <div className='side shadow-lg' id='side'>
-                <h4>Login</h4>
-                <h4>Sign Up</h4>
-                <h4>View Beaches</h4>
+                <Link to='/login'>Login</Link>
+                <Link to='/signup'>Sign Up</Link>
+                <Link to='/map'>View Beaches</Link>
                 <div className='fas fa-chevron-up mt-2' id='menuUp' onClick={() => handleMenu()}></div>
             </div>
             <div className='logoCont'>
