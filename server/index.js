@@ -3,6 +3,7 @@ const express = require('express');
 
 const db = require('./database');
 const ClientError = require('./client-error');
+const bcrypt = require('bcrypt');
 const staticMiddleware = require('./static-middleware');
 const sessionMiddleware = require('./session-middleware');
 
@@ -17,6 +18,85 @@ app.get('/api/health-check', (req, res, next) => {
   db.query(`select 'successfully connected' as "message"`)
     .then(result => res.json(result.rows[0]))
     .catch(err => next(err));
+});
+
+app.post('/api/signUp/', (req, res, next) => {
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(req.body.user_password, salt)
+
+  const sql = `
+  INSERT INTO "users" ("user_first_name", "user_last_name", "user_password")
+  VALUES                  ($1, $2, $3)
+  RETURNING *;
+  `;
+
+  const params = [req.body.user_first_name, req.body.user_last_name, hash];
+  
+  for (let i = 0; i < params.length; i ++) {
+    if (!params[i]) {
+      return res.status(400).json({ error: 'all signup input forms must be filled' });
+    }
+  }
+  db.query(sql, params)
+    .then(result => {
+      const row = result.rows[0];
+      res.status(201).json(row);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred.' });
+    });
+});
+
+//  SEARCH DATABASE FOR EXISTING EMAIL AND PASSWORD API GET REQUEST
+
+app.get('/api/login/:user_first_name/:user_password/', (req, res, next) => {
+  const firstname = req.params.user_first_name;
+  const password = req.params.user_password;
+
+  const sqlToGetPass = `
+  SELECT "user_password" from "users"
+  WHERE "user_first_name" = $1
+  `
+  const sql = `
+  SELECT * FROM "users"
+  WHERE "user_first_name" = $1 
+  AND "user_password" = $2;
+  `;
+
+  db.query(sqlToGetPass, [firstname] )
+    .then(result => {
+      if (!result.rows[0]) {
+        return res.status(400).json({ message: `No user information contains: ${firstname}` });
+      } else {
+        let hashedPass = result.rows[0];
+        bcrypt.compare(password, hashedPass.user_password, async function(err, isMatch) {
+          if (err) {
+            return err
+          } else if (!isMatch) {
+            return res.status(400).json({ message: `passwords do not match` });
+          } else {
+            console.log('passwords match!')
+            db.query(sql, [firstname, hashedPass.user_password] )
+            .then(result => {
+              if (!result.rows[0]) {
+                return res.status(400).json({ message: `No user information contains: ${firstname} or ${hashedPass.user_password}` });
+              } else {
+                return res.status(200).json(result.rows)
+              }
+            })
+            .catch(err => {
+              console.error(err);
+              res.status(500).json({ error: 'An unexpected error occurred.' });
+            });
+          }
+        })
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred.' });
+    });
 });
 
 app.use('/api', (req, res, next) => {
