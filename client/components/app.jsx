@@ -11,10 +11,10 @@ const App = () => {
         <div>
             <Router>
                 <Switch>
-                    <Route exact path='/' render={(props) => (<Landing {...props} name={'mason'} />)}/>
-                    <Route exact path='/signup' render={(props) => (<SignUp {...props} name={'mason'} />)}/>
-                    <Route exact path='/login' render={(props) => (<Login {...props} name={'mason'} />)}/>
-                    <Route exact path='/map' render={(props) => (<MapPage {...props} name={'mason'} />)}/>
+                    <Route exact path='/' render={(props) => (<Landing {...props}/>)}/>
+                    <Route exact path='/signup' render={(props) => (<SignUp {...props}/>)}/>
+                    <Route exact path='/login' render={(props) => (<Login {...props}/>)}/>
+                    <Route exact path='/map' render={(props) => (<MapPage {...props}/>)}/>
                 </Switch>
             </Router>
         </div>
