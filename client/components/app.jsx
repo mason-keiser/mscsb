@@ -6,14 +6,15 @@ import Login from './login';
 import MapPage from './map';
 
 const App = () => {
+    const [user, setUser] = useState('no user')
 
     return (
         <Router>
             <Switch>
-                <Route exact path='/' render={(props) => (<Landing {...props}/>)}/>
-                <Route exact path='/signup' render={(props) => (<SignUp {...props}/>)}/>
-                <Route exact path='/login' render={(props) => (<Login {...props}/>)}/>
-                <Route exact path='/map' render={(props) => (<MapPage {...props}/>)}/>
+                <Route exact path='/' render={(props) => (<Landing {...props} user={user} setUser={setUser}/>)}/>
+                <Route exact path='/signup' render={(props) => (<SignUp {...props} setUser={setUser}/>)}/>
+                <Route exact path='/login' render={(props) => (<Login {...props} setUser={setUser}/>)}/>
+                <Route exact path='/map' render={(props) => (<MapPage {...props} user={user}/>)}/>
             </Switch>
         </Router>  
     )
