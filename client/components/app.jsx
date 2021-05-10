@@ -6,7 +6,6 @@ import Login from './login';
 import MapPage from './map';
 
 const App = () => {
-    const [view, setView] = useState({name: 'landing'})
 
     return (
         <div>
