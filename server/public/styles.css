@@ -215,7 +215,7 @@ body, * {
 }
 
 #nmBtn.nm{
-    color: white;
+    color: yellow;
 }
 
 #nmBtn:hover {
