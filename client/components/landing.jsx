@@ -14,7 +14,7 @@ const Landing = (props) => {
                 <div></div>
                 <a href="https://mss.masonkeiser.com">Go To Surf Shop</a>
             </div>
-            <Menu/>
+            <Menu path={props.match.path}/>
             <div className='logoCont'>
                 <img src="/images/logo4bw.png" alt=""/>
                 <Link to='/map'>View Beaches</Link>

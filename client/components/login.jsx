@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Menu from './menu'
 
-const SignUp = (props) => {
+const Login = (props) => {
 
     return (
         <div className='signUpCont'>
@@ -11,4 +11,4 @@ const SignUp = (props) => {
     )
 }
 
-export default SignUp
+export default Login
