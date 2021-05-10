@@ -3,6 +3,10 @@ body, * {
     margin: 0;
 }
 
+.landingCont::-webkit-scrollbar {
+    display: none;
+}
+
 .landingCont {
     height: 90vh;
     width: 100vw;
