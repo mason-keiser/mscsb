@@ -24,13 +24,13 @@ const Menu = (props) => {
             }
         }
         if (props.nightMode) {
-            document.body.style.background = '#212121'
+            document.body.style.background = '#0E0E0E'
             var els = document.getElementsByTagName("*");
             for(var i = 0, all = els.length; i < all; i++){   
                  els[i].classList.add('nm');
              }
              if (landingLogo) {
-                landingLogo.src = '/images/dlogo.png'
+                landingLogo.src = '/images/nmlogo.png'
              }
         } else {
             document.body.style.background = 'white'
