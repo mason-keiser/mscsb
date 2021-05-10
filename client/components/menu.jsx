@@ -5,7 +5,6 @@ const Menu = (props) => {
 
     useEffect(() => {
         const links = document.querySelectorAll('.menI')
-        console.log(props.path)
         for (let i = 0; i < links.length; i++) {
             if (props.path === '/login') {
                 if (links[i].id === 'l') {
