@@ -157,6 +157,29 @@ body, * {
     left: 1.5rem;
 }
 
+#nmBtn {
+    position: absolute;
+    top: -40vh;
+    z-index: 999;
+    transition: top 1s;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    right: 1.5rem;
+    cursor: pointer;
+    
+}
+
+#nmBtn:hover {
+    opacity: 60%;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+}
+
+#nmBtn.open {
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
 @media screen and (max-width: 430px) {
     #homeBtn {
         left: 1rem;
