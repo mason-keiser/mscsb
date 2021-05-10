@@ -19,6 +19,8 @@ const Menu = (props) => {
                 if (links[i].id === 'm') {
                     links[i].style.color = '#0A2CDF'
                 }
+            } if (props.path === '/'){
+                document.getElementById('homeBtn').style.color = '#0A2CDF' 
             }
         }
     }, [])

@@ -146,6 +146,10 @@ body, * {
     left: 1.5rem;
 }
 
+#homeBtn:hover {
+    opacity: 60%;
+}
+
 #homeBtn.open {
     top: 1.5rem;
     left: 1.5rem;
@@ -156,7 +160,7 @@ body, * {
         left: 1rem;
     }
     #homeBtn.open {
-        top: 1rem;
+        top: 1.6rem;
         left: 1rem;
     }
     .copyCont {
