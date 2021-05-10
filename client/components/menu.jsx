@@ -25,15 +25,19 @@ const Menu = (props) => {
 
     const handleMenu = () => {
         const ham = document.getElementById('side');
+        const h = document.getElementById('homeBtn')
         if (ham.classList.contains('open')) {
             ham.classList.remove('open') 
+            h.classList.remove('open') 
         } else {
             ham.classList.add('open')
+            h.classList.add('open')
         }
     }
 
     return (
         <div>
+            <Link to='/' className='fas fa-home' id='homeBtn'></Link>
             <div className='menuBtn' onClick={() => handleMenu()}>
                 Menu
             </div>

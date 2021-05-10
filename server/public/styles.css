@@ -96,7 +96,7 @@ body, * {
 
 .side {
     color: black;
-    z-index: 999;
+    z-index: 990;
     position: fixed;
     top: -40vh;
     background: black;
@@ -135,7 +135,30 @@ body, * {
     opacity: 70%;
 }
 
+#homeBtn {
+    position: absolute;
+    top: -40vh;
+    z-index: 999;
+    transition: top 1s;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    left: 1.5rem;
+}
+
+#homeBtn.open {
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
 @media screen and (max-width: 430px) {
+    #homeBtn {
+        left: 1rem;
+    }
+    #homeBtn.open {
+        top: 1rem;
+        left: 1rem;
+    }
     .copyCont {
         left: -100px;
     }
