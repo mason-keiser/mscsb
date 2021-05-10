@@ -16,7 +16,7 @@ const Landing = (props) => {
             </div>
             <Menu path={props.match.path}/>
             <div className='logoCont'>
-                <img src="/images/logo4bw.png" alt=""/>
+                <img src="/images/logo4bw.png" alt="" id='landingLogo'/>
                 <Link to='/map'>View Beaches</Link>
             </div>
         </div>

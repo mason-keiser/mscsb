@@ -5,7 +5,7 @@ import Menu from './menu'
 const Login = (props) => {
 
     return (
-        <div className='signUpCont'>
+        <div className='signUpCont c'>
             <Menu path={props.match.path}/>
         </div>
     )
