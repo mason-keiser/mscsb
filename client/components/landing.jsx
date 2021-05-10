@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Menu from './menu'
 
 const Landing = (props) => {
- 
+
     return (
         <div className='landingCont'>
             <div className='copyCont'>
