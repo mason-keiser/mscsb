@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 
 const Menu = (props) => {
 
     useEffect(() => {
         const links = document.querySelectorAll('.menI')
+        const landingLogo = document.getElementById('landingLogo')
         for (let i = 0; i < links.length; i++) {
             if (props.path === '/login') {
                 if (links[i].id === 'l') {
@@ -22,7 +23,27 @@ const Menu = (props) => {
                 document.getElementById('homeBtn').style.color = '#0A2CDF' 
             }
         }
-    }, [])
+        if (props.nightMode) {
+            document.body.style.background = '#212121'
+            var els = document.getElementsByTagName("*");
+            for(var i = 0, all = els.length; i < all; i++){   
+                 els[i].classList.add('nm');
+             }
+             if (landingLogo) {
+                landingLogo.src = '/images/dlogo.png'
+             }
+        } else {
+            document.body.style.background = 'white'
+            var els = document.getElementsByTagName("*");
+            for(var i = 0, all = els.length; i < all; i++){   
+                 els[i].classList.remove('nm');
+             }
+            if (landingLogo) {
+                landingLogo.src = '/images/logo4bw.png'
+            }
+        }
+        
+    }, [props.nightMode])
 
     const handleMenu = () => {
         const ham = document.getElementById('side');
@@ -39,10 +60,14 @@ const Menu = (props) => {
         }
     }
 
+    const nm = () => {
+        props.setNightMode(!props.nightMode)
+    }
+
     return (
         <div>
             <Link to='/' className='fas fa-home' id='homeBtn'></Link>
-            <div className='fas fa-moon' id='nmBtn'></div>
+            <div className='fas fa-moon' id='nmBtn' onClick={() => nm()}></div>
             <div className='menuBtn' onClick={() => handleMenu()}>
                 Menu
             </div>

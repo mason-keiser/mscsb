@@ -8,6 +8,10 @@ body, * {
     width: 100vw;
 }
 
+.logoCont > img {
+    width: 25vw;
+}
+
 .logoCont {
     height: inherit;
     width: inherit;
@@ -20,6 +24,10 @@ body, * {
 .logoCont > a {
     text-decoration: none;
     color: black;
+}
+
+.logoCont > a.nm {
+    color: white;
 }
 
 .logoCont > a:hover {
@@ -40,6 +48,12 @@ body, * {
     width: 150px;
     height: 3px;
     background: black;    
+}
+
+.copyCont > div.nm {
+    width: 150px;
+    height: 3px;
+    background: white;    
 }
 
 .copyCont > h5 {
@@ -63,11 +77,22 @@ body, * {
     background: black;    
 }
 
+.shopCont > div.nm {
+    width: 150px;
+    height: 3px;
+    background: white;    
+}
+
 .shopCont > a {
     margin-left: 5px;
     text-decoration: none;
     color: black;
     font-size: small;
+}
+
+.shopCont > a.nm {
+
+    color: white;
 }
 
 .shopCont > a:hover {
@@ -83,6 +108,11 @@ body, * {
     margin-top: 1rem;
     width: 100px;
     align-items: center;
+}
+
+.menuBtn.nm{
+    border-top: 2px solid white;  
+    
 }
 
 .menuBtn:hover {
@@ -110,6 +140,12 @@ body, * {
     border-bottom: 2px solid black;
 }  
 
+.side.nm {
+    border-bottom: 2px solid white;
+    color: white;
+    background: #212121;
+}
+
 .side.open {
     top: 0px;
 }
@@ -117,6 +153,10 @@ body, * {
 .side > a {
     text-decoration: none;    
     color: black;
+}
+
+.side > a.nm {
+    color: white;
 }
 
 .side > a:hover {
@@ -147,6 +187,10 @@ body, * {
     
 }
 
+#homeBtn.nm{
+    color: white;
+}
+
 #homeBtn:hover {
     opacity: 60%;
     text-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
@@ -170,6 +214,10 @@ body, * {
     
 }
 
+#nmBtn.nm{
+    color: white;
+}
+
 #nmBtn:hover {
     opacity: 60%;
     text-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
@@ -178,6 +226,13 @@ body, * {
 #nmBtn.open {
     top: 1.5rem;
     right: 1.5rem;
+}
+
+.nm {
+    color: white;
+}
+.nmBack {
+    background: #313131;
 }
 
 @media screen and (max-width: 430px) {

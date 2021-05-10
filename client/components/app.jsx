@@ -7,14 +7,15 @@ import MapPage from './map';
 
 const App = () => {
     const [user, setUser] = useState('no user')
+    const [nightMode, setNightMode] = useState(false)
 
     return (
         <Router>
             <Switch>
-                <Route exact path='/' render={(props) => (<Landing {...props}/>)}/>
-                <Route exact path='/signup' render={(props) => (<SignUp {...props} setUser={setUser}/>)}/>
-                <Route exact path='/login' render={(props) => (<Login {...props} setUser={setUser}/>)}/>
-                <Route exact path='/map' render={(props) => (<MapPage {...props} user={user}/>)}/>
+                <Route exact path='/' render={(props) => (<Landing {...props} nightMode={nightMode} setNightMode={setNightMode}/>)}/>
+                <Route exact path='/signup' render={(props) => (<SignUp {...props} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
+                <Route exact path='/login' render={(props) => (<Login {...props} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
+                <Route exact path='/map' render={(props) => (<MapPage {...props} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
             </Switch>
         </Router>  
     )

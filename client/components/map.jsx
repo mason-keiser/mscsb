@@ -6,7 +6,7 @@ const MapPage = (props) => {
 
     return (
         <div className='signUpCont'>
-            <Menu path={props.match.path}/>
+            <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
         </div>
     )
 }
