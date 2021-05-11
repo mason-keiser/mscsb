@@ -41,8 +41,9 @@ const SignUp = (props) => {
         const five = document.getElementById('passM')
 
         if (pass1) {
+             //validate length of pass
             for (let i = 0; i < pass1.length; i++) {
-                //validate length of pass
+               
                 if (pass1.length >= 8 ) {
                     if (props.nightMode) {
                         one.style.color = 'white'
@@ -58,9 +59,9 @@ const SignUp = (props) => {
                 }
             }
 
+            //validate if contains 1 num
             let lettCount = false;
             for (let j = 0; j < pass1.length; j++) {
-                  //validate if contains 1 letter
                   
                   if (pass1[j].match(/[a-z]/i)) {
                       console.log(pass1[j])
@@ -82,6 +83,7 @@ const SignUp = (props) => {
                   }
             }
 
+            //validate if contains 1 num
             let numCount = false
             for (let k = 0;k < pass1.length; k++ ) {
                 
@@ -89,8 +91,6 @@ const SignUp = (props) => {
                     console.log(pass1[k])
                     numCount = true
                 }
-        
-                 //validate if contains 1 num
                   
                  if (numCount === true) {
                     if (props.nightMode) {
@@ -103,6 +103,29 @@ const SignUp = (props) => {
                         three.style.color = 'black'
                     } else {
                         three.style.color = 'white'
+                    }
+                }
+            }
+
+            //validate if contains 1 special character
+            let specChar = false
+            for (let l = 0; l < pass1.length; l ++) {
+                if (pass1[l].match(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g)) {
+                    console.log(pass1[l])
+                    specChar = true
+                }
+
+                if (specChar === true) {
+                    if (props.nightMode) {
+                        four.style.color = 'white'
+                    } else {
+                        four.style.color = 'black'
+                    }
+                } else {
+                    if (props.nightMode) {
+                        four.style.color = 'black'
+                    } else {
+                        four.style.color = 'white'
                     }
                 }
             }
