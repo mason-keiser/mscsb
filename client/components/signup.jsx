@@ -30,7 +30,6 @@ const SignUp = (props) => {
             validate()
         } else {
             setPass2(event.target.value)
-            validate()
         }
     }
 
@@ -59,16 +58,16 @@ const SignUp = (props) => {
                 }
             }
 
-            for (let j = 0; j <pass1.length; j++) {
+            let lettCount = false;
+            for (let j = 0; j < pass1.length; j++) {
                   //validate if contains 1 letter
-                  let lettCount = 0;
-
+                  
                   if (pass1[j].match(/[a-z]/i)) {
-                      console.log('letter')
-                      lettCount++
-                  } 
-                  console.log(lettCount)
-                  if (lettCount >= 1) {
+                      console.log(pass1[j])
+                      lettCount = true
+                  }
+    
+                  if (lettCount === true) {
                       if (props.nightMode) {
                           two.style.color = 'white'
                       } else {
@@ -83,16 +82,17 @@ const SignUp = (props) => {
                   }
             }
 
+            let numCount = false
             for (let k = 0;k < pass1.length; k++ ) {
-                let numCount = 0
+                
                 if (pass1[k].match(/^\d+$/)) {
-                    console.log('num')
-                    numCount++
+                    console.log(pass1[k])
+                    numCount = true
                 }
-                console.log(numCount)
+        
                  //validate if contains 1 num
                   
-                 if (numCount >= 1) {
+                 if (numCount === true) {
                     if (props.nightMode) {
                         three.style.color = 'white'
                     } else {
@@ -107,8 +107,6 @@ const SignUp = (props) => {
                 }
             }
         }
-
-    
 
         if (!(pass1 && pass2)) {
             if (props.nightMode) {
@@ -193,11 +191,11 @@ const SignUp = (props) => {
                         </div>
                         <div className='reqRow'>
                             <span id='1lett' className='fas fa-check'></span>
-                            <div>At least one letter</div>
+                            <div>One letter</div>
                         </div>
                         <div className='reqRow'>
                             <span id='1num' className='fas fa-check'></span>
-                            <div>At least one number</div>
+                            <div>One number</div>
                         </div>
                     </div>
                     <div className='reqCol'>
