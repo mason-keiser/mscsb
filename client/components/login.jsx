@@ -7,6 +7,7 @@ const Login = (props) => {
     return (
         <div className='signUpCont'>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
+            <h2 className='sTitle'>Login</h2>
         </div>
     )
 }
