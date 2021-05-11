@@ -333,7 +333,7 @@ body, * {
 
   .valCont {
     width: 40vw;
-    height: 40vh;
+    height: 45vh;
     background: white;
     border: 1px solid black;
     border-radius: 5px;
@@ -350,6 +350,13 @@ body, * {
     border-bottom: 1px solid black;
     width: fit-content;
     margin: auto;
+  }
+
+  .reqB {
+    text-align: center;
+    margin: auto;
+
+    color: red;
   }
 
   .reqCont {
@@ -385,6 +392,9 @@ body, * {
   }
 
 @media screen and (max-width: 430px) {
+    .reqB {
+        margin-top: 2rem;
+    }
     .reqCont {
         height: 35vh;
         align-items: unset;
@@ -411,7 +421,7 @@ body, * {
     }
     .valCont {
         width: 90vw;
-        height: 45vh;
+        height: 55vh;
         margin-bottom: 1rem;
     }
 
