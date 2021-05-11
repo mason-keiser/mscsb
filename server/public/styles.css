@@ -178,6 +178,14 @@ body, * {
     opacity: 70%;
 }
 
+#lo {
+    cursor: pointer;
+}
+
+#lo:hover {
+    opacity: 60%;
+}
+
 #homeBtn {
     position: absolute;
     top: -40vh;

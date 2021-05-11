@@ -85,6 +85,9 @@ app.get('/api/login/:user_first_name/:user_password/', (req, res, next) => {
               if (!result.rows[0]) {
                 return res.status(400).json({ message: `No user information contains: ${firstname} or ${hashedPass.user_password}` });
               } else {
+                result.rows.forEach((i) => {
+                  delete i.user_password
+                })
                 return res.status(200).json(result.rows)
               }
             })

@@ -1,8 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom'
 import Menu from './menu'
 
 const Login = (props) => {
+    const [name, setName] = useState();
+    const [pass, setPass] = useState();
+    const history = useHistory();
 
     const passEye = () => {
         const eye = document.getElementById('eye')
@@ -21,6 +24,46 @@ const Login = (props) => {
         }
     }
 
+    const handleChange = (event) => {
+        if (event.target.id === 'firstname') {
+            setName(event.target.value)
+        } if (event.target.id === 'pass1') {
+            setPass(event.target.value)
+        } 
+    }
+
+    const login = () => {
+        let loginInfo = {
+            user_first_name: name,
+            user_password: pass
+        }
+        if (!loginInfo) {
+            return null
+        }
+        let fname = loginInfo.user_first_name;
+        const password = loginInfo.user_password;
+        fetch('/api/login/' + fname + '/' + password, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json'}
+        })
+            .then(response => {
+                if (response.status === 400 || response.status === 404) {
+                   return null
+                } else {
+                    return response.json();
+                }
+            })
+                .then(result => {
+                    if (!result) {
+                        return null
+                    } else {
+                        console.log(result)
+                        props.setUser(result)
+                        history.push("/map");
+                    }
+                })
+    }
+
     return (
         <div className=''>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
@@ -29,16 +72,16 @@ const Login = (props) => {
                 <form action="">
                     <div className='wrapper mt-3'>
                         <div className='input-data' id='e'>
-                            <input id='firstname' required type='text'/>
+                            <input onChange={handleChange} id='firstname' required type='text'/>
                             <label htmlFor="">First Name</label>
                         </div>
                         <div className='input-data' id='c'>
-                            <input  id='pass1' required type='password'/>
+                            <input onChange={handleChange} id='pass1' required type='password'/>
                             <label htmlFor="">Password</label>
                             <span onClick={() => passEye()} id='eye' className='fas fa-eye-slash show'></span>
                         </div>
                         <div>
-                            <button type="button" className='signupBtn'>Login</button>
+                            <button onClick={() => login()} type="button" className='signupBtn'>Login</button>
                         </div>
                     </div>
                 </form>

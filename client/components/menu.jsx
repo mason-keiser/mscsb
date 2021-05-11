@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 const Menu = (props) => {
+    const history = useHistory()
 
     useEffect(() => {
         const links = document.querySelectorAll('.menI')
@@ -64,6 +65,28 @@ const Menu = (props) => {
         props.setNightMode(!props.nightMode)
     }
 
+    const logout = () => {
+        props.setUser(false)
+        history.push("/");
+    }
+
+    const sideterp = (props.user) 
+    ? (
+    <div className='side shadow-lg' id='side'>
+        <div className='menI' id='lo'>My Beaches</div>
+        <Link className='menI' id='m' to='/map'>View Beaches</Link>
+        <div className='menI' id='lo' onClick={() => logout()}>Logout</div>
+        <div className='fas fa-chevron-up mt-2' id='menuUp' onClick={() => handleMenu()}></div>
+    </div>
+    )  : (
+    <div className='side shadow-lg' id='side'>
+        <Link className='menI' id='l' to='/login'>Login</Link>
+        <Link className='menI' id='s' to='/signup'>Sign Up</Link>
+        <Link className='menI' id='m' to='/map'>View Beaches</Link>
+        <div className='fas fa-chevron-up mt-2' id='menuUp' onClick={() => handleMenu()}></div>
+    </div>
+    )
+
     return (
         <div>
             <Link to='/' className='fas fa-home' id='homeBtn'></Link>
@@ -71,12 +94,7 @@ const Menu = (props) => {
             <div className='menuBtn' onClick={() => handleMenu()}>
                 Menu
             </div>
-            <div className='side shadow-lg' id='side'>
-                <Link className='menI' id='l' to='/login'>Login</Link>
-                <Link className='menI' id='s' to='/signup'>Sign Up</Link>
-                <Link className='menI' id='m' to='/map'>View Beaches</Link>
-                <div className='fas fa-chevron-up mt-2' id='menuUp' onClick={() => handleMenu()}></div>
-            </div>
+            {sideterp}
         </div>
     )
 }
