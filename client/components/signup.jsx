@@ -10,6 +10,10 @@ const SignUp = (props) => {
 
     useEffect(() => {
         validate()
+    })
+
+    useEffect(() => {
+        validate()
     },[pass1, pass2])
 
     const handleNameChange = (event) => {
@@ -37,10 +41,36 @@ const SignUp = (props) => {
         const four = document.getElementById('1spec')
         const five = document.getElementById('passM')
 
+        if (pass1) {
+            for (let i = 0; i < pass1.length; i++) {
+                if (pass1.length >= 8 ) {
+                    if (props.nightMode) {
+                        one.style.color = 'white'
+                    } else  {
+                        one.style.color = 'black'
+                    }
+                } else  {
+                    if (props.nightMode) {
+                        one.style.color = 'black'
+                    } else {
+                        one.style.color = 'white'
+                    }
+                }
+            }
+        }
+
         if (!(pass1 && pass2)) {
-            five.style.color = 'white'
+            if (props.nightMode) {
+                five.style.color = 'black'
+            } else {
+                five.style.color = 'white'
+            }
         } else if (pass1 === pass2){
-            five.style.color = 'black'
+            if (props.nightMode) {
+                five.style.color = 'white'
+            } else {
+                five.style.color = 'black'
+            }
         }
     }
 
