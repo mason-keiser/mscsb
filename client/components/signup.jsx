@@ -33,7 +33,33 @@ const SignUp = (props) => {
                     </div>
                 </form>
             <div className='valCont'>
-
+                <h3 className='reqT'>Password Requirements</h3>
+                <div className='reqCont'>
+                    <div className='reqCol'>
+                        <div className='reqRow'>
+                            <span className='fas fa-check'></span>
+                            <div>8+ Characters</div>
+                        </div>
+                        <div className='reqRow'>
+                            <span className='fas fa-check'></span>
+                            <div>At least one letter</div>
+                        </div>
+                        <div className='reqRow'>
+                            <span className='fas fa-check'></span>
+                            <div>At least one number</div>
+                        </div>
+                    </div>
+                    <div className='reqCol'>
+                        <div className='reqRow'>
+                                <span className='fas fa-check'></span>
+                                <div>One special character</div>
+                            </div>
+                            <div className='reqRow'>
+                                <span className='fas fa-check'></span>
+                                <div>Passwords Match</div>
+                            </div>
+                        </div>
+                    </div>
             </div>
             </div>
         </div>
