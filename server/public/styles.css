@@ -404,7 +404,8 @@ body, * {
 
 @media screen and (max-width: 430px) {
     #eye1 , #eye2 {
-        bottom: 10px;
+        font-size: larger;
+        bottom: 12px;
         right: 4px;
       }
     .reqB {
