@@ -291,7 +291,7 @@ body, * {
     transform: translateY(-25px);
     background: white;
     color: #0A2CDF;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .input-data input:valid ~ label.nm,
@@ -475,6 +475,21 @@ body, * {
 }
 
 @media screen and (max-width: 330px) {
+    .input-data input:valid ~ label,
+  .input-data  input:focus ~ label{
+    
+    font-size: 0.9rem;
+  }
+    .wrapper .input-data label {
+        bottom: 5px;
+    }
+    #eye1 , #eye2 {
+        bottom: 7px;
+      }
+    .reqB {
+        margin-top: 7rem;
+    }
+
     .valCont {
         box-shadow: unset;
         border: none;
