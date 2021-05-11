@@ -393,6 +393,7 @@ body, * {
 
   #eye1 , #eye2 {
     cursor: pointer;
+    font-size: larger;
     position: absolute;
     bottom: -8px;
     right: -5px;
