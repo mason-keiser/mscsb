@@ -1,5 +1,6 @@
+import { sign } from 'crypto';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Menu from './menu'
 
 const SignUp = (props) => {
@@ -8,6 +9,7 @@ const SignUp = (props) => {
     const [pass1, setPass1] = useState()
     const [pass2, setPass2] = useState()
     const [reqsMet, setReqsMet] = useState(false)
+    const history = useHistory();
 
     useEffect(() => {
         validate()
@@ -28,6 +30,36 @@ const SignUp = (props) => {
         } else {
             setPass2(event.target.value)
         }
+    }
+
+    const signUp = () => {
+        let signupInfo = {
+            user_first_name: firstname,
+            user_last_name: lastname,
+            user_password: pass1
+        } 
+        console.log(signupInfo)
+        fetch('/api/signUp', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(signupInfo)
+        })
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+               return null
+            } else {
+                return response.json();
+            }
+        })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                    console.log(result)
+                    props.setUser(result)
+                    history.push("/map");
+                }
+            })
     }
 
     const validate = () => {
@@ -153,11 +185,13 @@ const SignUp = (props) => {
             bottomTag.innerHTML = 'Meet All Password Requirements to Create Account'
             bottomTag.style.color = 'red'
             suBtn.style.background = '#353535'
+            suBtn.removeEventListener('click', signUp)
         } else {
             setReqsMet(true)
             bottomTag.innerHTML = 'All Requirements Met'
             bottomTag.style.color ='green'
             suBtn.style.background = '#0A2CDF'
+            suBtn.addEventListener('click', signUp)
         }
 
     }
@@ -216,7 +250,7 @@ const SignUp = (props) => {
                             <span onClick={() => passEye()} id='eye2' className='fas fa-eye-slash show'></span>
                         </div>
                         <div>
-                            <button className='signupBtn'>Create Account</button>
+                            <button type="button" className='signupBtn'>Create Account</button>
                         </div>
                     </div>
                 </form>

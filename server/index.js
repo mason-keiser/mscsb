@@ -40,6 +40,9 @@ app.post('/api/signUp/', (req, res, next) => {
   db.query(sql, params)
     .then(result => {
       const row = result.rows[0];
+      result.rows.forEach((i) => {
+        delete i.user_password
+      })
       res.status(201).json(row);
     })
     .catch(err => {
