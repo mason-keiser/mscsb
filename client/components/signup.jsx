@@ -7,6 +7,7 @@ const SignUp = (props) => {
     const [lastname, setLastname] = useState();
     const [pass1, setPass1] = useState()
     const [pass2, setPass2] = useState()
+    const [reqsMet, setReqsMet] = useState(false)
 
     useEffect(() => {
         validate()
@@ -65,7 +66,6 @@ const SignUp = (props) => {
             for (let j = 0; j < pass1.length; j++) {
                   
                   if (pass1[j].match(/[A-Z]/i)) {
-                      console.log(pass1[j])
                       lettCount = true
                   }
     
@@ -88,7 +88,6 @@ const SignUp = (props) => {
             for (let k = 0;k < pass1.length; k++ ) {
                 
                 if (pass1[k].match(/^\d+$/)) {
-                    console.log(pass1[k])
                     numCount = true
                 }
                   
@@ -110,7 +109,6 @@ const SignUp = (props) => {
             //validate if contains 1 special character
             for (let l = 0; l < pass1.length; l ++) {
                 if (pass1[l].match(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g)) {
-                    console.log(pass1[l])
                     specChar = true
                 }
 
@@ -151,10 +149,12 @@ const SignUp = (props) => {
         let bottomTag = document.querySelector('.reqB')
         let suBtn = document.querySelector('.signupBtn')
         if (finalVal.includes(false)) {
+            setReqsMet(false)
             bottomTag.innerHTML = 'Meet All Password Requirements to Create Account'
             bottomTag.style.color = 'red'
             suBtn.style.background = '#353535'
         } else {
+            setReqsMet(true)
             bottomTag.innerHTML = 'All Requirements Met'
             bottomTag.style.color ='green'
             suBtn.style.background = '#0A2CDF'
