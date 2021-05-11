@@ -239,7 +239,96 @@ body, * {
     background: #313131;
 }
 
+.wrapper {
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrapper .input-data {
+    height: 3vh;
+    width: 30vw;
+    position: relative;
+    margin: 2rem;
+  }
+
+
+  .wrapper .input-data input.nm {
+    background: #0E0E0E;
+    border: 1px solid white;
+    color: white;
+  }
+
+  .wrapper .input-data label {
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .wrapper .input-data input {
+    height: 100%;
+    width: 100%;
+    padding: 10px 10px 10px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    font-size: 1rem;
+  }
+
+  .input-data input:focus {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+  }
+
+  .input-data input:valid ~ label,
+  .input-data  input:focus ~ label{
+    transform: translateY(-25px);
+    background: white;
+    color: #0A2CDF;
+    font-size: 1.2rem;
+  }
+
+  .input-data input:valid ~ label.nm,
+  .input-data  input:focus ~ label.nm{
+    transform: translateY(-25px);
+    background: #0E0E0E;
+    color: #0A2CDF;
+  }
+
+  .sTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .signupBtn {
+    width: 10vw;
+    height: 5vh;
+    margin: 2rem;
+    border: none;
+    background: #0A2CDF;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+  }
+
 @media screen and (max-width: 430px) {
+    .signupBtn {
+        width: 45vw;
+        font-size: medium;
+    }
+
+    .wrapper .input-data {
+        width: 70vw;
+        margin: 1.5rem;
+    }
+    
     #homeBtn {
         left: 1rem;
     }
