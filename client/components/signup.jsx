@@ -211,7 +211,7 @@ const SignUp = (props) => {
                             </div>
                         </div>
                     </div>
-                    <h4 className='reqB mb-3 pb-5'>Meet Password Requirements to Create Account</h4>
+                    <h5 className='reqB mb-3 pb-5'>Meet All Password Requirements to Create Account</h5>
                 </div>
             </div>
         </div>
