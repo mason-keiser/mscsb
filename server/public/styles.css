@@ -315,10 +315,59 @@ body, * {
     border: none;
     background: #0A2CDF;
     color: white;
+    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
   }
 
+  .signupBtn:hover {
+    opacity: 80%;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 3px 8px;;
+  }
+
+  .swit {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .valCont {
+    width: 40vw;
+    height: 40vh;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+  }
+
+  .valCont.nm {
+    background: #0E0E0E;
+    border: 1px solid white;
+  }
+
 @media screen and (max-width: 430px) {
+    .wrapper .input-data label {
+        bottom: 8px;
+      }
+    .wrapper .input-data {
+        height: unset;
+        width: unset;
+      
+        margin: 1rem;
+      }
+
+      .wrapper .input-data input {
+        padding: 2px;
+        height: 5vh;
+      }
+    .swit {
+        flex-direction: column;
+    }
+    .valCont {
+        width: 90vw;
+        height: 30vh;
+        margin-bottom: 1rem;
+    }
+
     .signupBtn {
         width: 45vw;
         font-size: medium;
@@ -326,7 +375,7 @@ body, * {
 
     .wrapper .input-data {
         width: 70vw;
-        margin: 1.5rem;
+        margin: 1rem;
     }
     
     #homeBtn {
