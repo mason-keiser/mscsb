@@ -10,11 +10,7 @@ const SignUp = (props) => {
 
     useEffect(() => {
         validate()
-    })
-
-    useEffect(() => {
-        validate()
-    },[pass1, pass2])
+    },[pass1, pass2, props.nightMode])
 
     const handleNameChange = (event) => {
         if (event.target.id === 'firstname') {
@@ -40,11 +36,17 @@ const SignUp = (props) => {
         const four = document.getElementById('1spec')
         const five = document.getElementById('passM')
 
+        let passMatch = false;
+        let length = false;
+        let lettCount = false;
+        let numCount = false;
+        let specChar = false;
         if (pass1) {
              //validate length of pass
             for (let i = 0; i < pass1.length; i++) {
                
                 if (pass1.length >= 8 ) {
+                    length = true
                     if (props.nightMode) {
                         one.style.color = 'white'
                     } else  {
@@ -59,11 +61,10 @@ const SignUp = (props) => {
                 }
             }
 
-            //validate if contains 1 num
-            let lettCount = false;
+            //validate if contains 1 letter
             for (let j = 0; j < pass1.length; j++) {
                   
-                  if (pass1[j].match(/[a-z]/i)) {
+                  if (pass1[j].match(/[A-Z]/i)) {
                       console.log(pass1[j])
                       lettCount = true
                   }
@@ -84,7 +85,6 @@ const SignUp = (props) => {
             }
 
             //validate if contains 1 num
-            let numCount = false
             for (let k = 0;k < pass1.length; k++ ) {
                 
                 if (pass1[k].match(/^\d+$/)) {
@@ -108,7 +108,6 @@ const SignUp = (props) => {
             }
 
             //validate if contains 1 special character
-            let specChar = false
             for (let l = 0; l < pass1.length; l ++) {
                 if (pass1[l].match(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g)) {
                     console.log(pass1[l])
@@ -131,6 +130,7 @@ const SignUp = (props) => {
             }
         }
 
+        //validate if passwords match
         if (!(pass1 && pass2)) {
             if (props.nightMode) {
                 five.style.color = 'black'
@@ -138,12 +138,28 @@ const SignUp = (props) => {
                 five.style.color = 'white'
             }
         } else if (pass1 === pass2){
+                passMatch = true
             if (props.nightMode) {
                 five.style.color = 'white'
             } else {
                 five.style.color = 'black'
             }
         }
+
+        // validate if all requirements are met
+        let finalVal = [length, lettCount, numCount, specChar, passMatch]
+        let bottomTag = document.querySelector('.reqB')
+        let suBtn = document.querySelector('.signupBtn')
+        if (finalVal.includes(false)) {
+            bottomTag.innerHTML = 'Meet All Password Requirements to Create Account'
+            bottomTag.style.color = 'red'
+            suBtn.style.background = '#353535'
+        } else {
+            bottomTag.innerHTML = 'All Requirements Met'
+            bottomTag.style.color ='green'
+            suBtn.style.background = '#0A2CDF'
+        }
+
     }
 
     const passEye = () => {
