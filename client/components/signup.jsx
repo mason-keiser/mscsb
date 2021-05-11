@@ -125,6 +125,34 @@ const SignUp = (props) => {
         }
     }
 
+    const passEye = () => {
+        const eye1 = document.querySelector('#eye1')
+        const eye2 = document.querySelector('#eye2')
+        const pass1 = document.querySelector('#pass1')
+        const pass2 = document.querySelector('#pass2')
+        if (eye1.classList.contains('show')) {
+            eye1.classList.remove('fa-eye-slash')
+            eye1.classList.remove('show')
+            pass1.type = 'text'
+            eye1.classList.add ('fa-eye')
+        } else {
+            eye1.classList.add('fa-eye-slash')
+            eye1.classList.add('show')
+            pass1.type = 'password'
+            eye1.classList.remove('fa-eye')
+        } if (eye2.classList.contains('show')) {
+            eye2.classList.remove('fa-eye-slash')
+            eye2.classList.remove('show')
+            pass2.type = 'text'
+            eye2.classList.add ('fa-eye')
+        } else {
+            eye2.classList.add('fa-eye-slash')
+            eye2.classList.add('show')
+            pass2.type = 'password'
+            eye2.classList.remove('fa-eye')
+        }
+    }
+
     return (
         <div className='signUpCont c'>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
@@ -141,12 +169,14 @@ const SignUp = (props) => {
                             <label htmlFor="">Last Name</label>
                         </div>
                         <div className='input-data' id='c'>
-                            <input onChange={handlePassChange} id='pass1' required type='text'/>
+                            <input onChange={handlePassChange} id='pass1' required type='password'/>
                             <label htmlFor="">Password</label>
+                            <span onClick={() => passEye()} id='eye1' className='fas fa-eye-slash show'></span>
                         </div>
                         <div className='input-data' id='a'>
-                            <input onChange={handlePassChange} id='pass2' required type="text"/>
+                            <input onChange={handlePassChange} id='pass2' required type="password"/>
                             <label htmlFor="">Re Enter Password</label>
+                            <span onClick={() => passEye()} id='eye2' className='fas fa-eye-slash show'></span>
                         </div>
                         <div>
                             <button className='signupBtn'>Create Account</button>

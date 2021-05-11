@@ -391,7 +391,22 @@ body, * {
     color: black;
   }
 
+  #eye1 , #eye2 {
+    cursor: pointer;
+    position: absolute;
+    bottom: -8px;
+    right: -5px;
+  }
+
+  #eye1:hover, #eye2:hover {
+    opacity: 80%;
+  }
+
 @media screen and (max-width: 430px) {
+    #eye1 , #eye2 {
+        bottom: 10px;
+        right: 4px;
+      }
     .reqB {
         margin-top: 2rem;
     }
