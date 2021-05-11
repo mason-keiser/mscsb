@@ -38,6 +38,11 @@ const SignUp = (props) => {
             user_last_name: lastname,
             user_password: pass1
         } 
+        if (!signupInfo.user_first_name || !signupInfo.user_last_name) {
+            let bottomTag = document.querySelector('.reqB')
+            bottomTag.innerHTML = 'Please fill out all required inputs'
+            bottomTag.style.color = 'red'
+        }
         console.log(signupInfo)
         fetch('/api/signUp', {
             method: 'POST',

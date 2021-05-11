@@ -98,6 +98,13 @@ ALTER TABLE ONLY public.users ALTER COLUMN user_id SET DEFAULT nextval('public.u
 
 COPY public.users (user_id, user_first_name, user_last_name, user_password) FROM stdin;
 1	yung	lean	123123#$(*&@$,n,
+2	yo	mama	$2b$10$N7uZ50e1847q/199mfKFb.6hrueK2poKG3HZApmItcNJuoa/ePfhm
+3	yo	deez	$2b$10$PbRZm2Pw0dji09zInoqlHOFTVdREeTMnaHkzBd1O5VIqJ5.1X7re2
+4	Mason	Keiser	$2b$10$1WQaDmGXi7xD8.gL/TKGFuh5NnQXl6cXMkHdt79nahzL3iIrboJpS
+5	Melissa	Kim	$2b$10$lrJ8UsCR.yBmCT3kJJWGBO.y3AFMdnUtz1bIUTG86/CfPqF7PI2Ba
+6	new	user	$2b$10$BEk6TUcI88z87uMTW3QZ6O33aknK5N8K5WxWiOUP3o1VRYLINeV3u
+7	new	me	$2b$10$0rqOu89h66.8Sgn4Fs15cueV7V4cJi/Gpj9QzYVbpQTsaiK3VHD7K
+8	new	me	$2b$10$E.9HqVEtdJ7gn6uNiOxsA.fZChzhWcIiUrKK5ghuTRhOhNvCBEGs.
 \.
 
 
@@ -105,7 +112,7 @@ COPY public.users (user_id, user_first_name, user_last_name, user_password) FROM
 -- Name: users_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_user_id_seq', 1, true);
+SELECT pg_catalog.setval('public.users_user_id_seq', 8, true);
 
 
 --
