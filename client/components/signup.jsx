@@ -57,37 +57,42 @@ const SignUp = (props) => {
                         one.style.color = 'white'
                     }
                 }
+            }
 
-                //validate if contains 1 letter
-                let lettCount = 0;
-                if (pass1[i].match(/[a-z]/i)) {
-                    console.log('letter')
-                    lettCount++
-                    console.log(lettCount)
-                }
-                if (lettCount === 1) {
-                    if (props.nightMode) {
-                        two.style.color = 'white'
-                    } else {
-                        two.style.color = 'black'
-                    }
-                } else {
-                    lettCount= 0
-                    if (props.nightMode) {
-                        two.style.color = 'black'
-                    } else {
-                        two.style.color = 'white'
-                    }
-                }
+            for (let j = 0; j <pass1.length; j++) {
+                  //validate if contains 1 letter
+                  let lettCount = 0;
 
-                //validate if contains 1 num
-                let numCount = 0;
-                if (pass1[i].match(/^\d+$/)) {
+                  if (pass1[j].match(/[a-z]/i)) {
+                      console.log('letter')
+                      lettCount++
+                  } 
+                  console.log(lettCount)
+                  if (lettCount >= 1) {
+                      if (props.nightMode) {
+                          two.style.color = 'white'
+                      } else {
+                          two.style.color = 'black'
+                      }
+                  } else {
+                      if (props.nightMode) {
+                          two.style.color = 'black'
+                      } else {
+                          two.style.color = 'white'
+                      }
+                  }
+            }
+
+            for (let k = 0;k < pass1.length; k++ ) {
+                let numCount = 0
+                if (pass1[k].match(/^\d+$/)) {
                     console.log('num')
                     numCount++
-                    console.log(numCount)
                 }
-                if (numCount === 1) {
+                console.log(numCount)
+                 //validate if contains 1 num
+                  
+                 if (numCount >= 1) {
                     if (props.nightMode) {
                         three.style.color = 'white'
                     } else {
