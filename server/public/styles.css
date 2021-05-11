@@ -418,11 +418,28 @@ body, * {
   }
 
   .loginCont {
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .learn {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    justify-content: flex-end;
+    font-size: smaller;
+    margin-top: 5rem;
+  }
+
+  .learn:hover, .gotosu:hover {
+      opacity: 70%;
+  }
+
+  .learn.nm {
+      color: white;
   }
 
 @media screen and (max-width: 430px) {
