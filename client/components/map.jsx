@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Menu from './menu'
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import { googleApi } from './api';
+import Footer from './footer';
 
 const MapPage = (props) => {
 
@@ -17,7 +18,7 @@ const MapPage = (props) => {
                 <h4>Clicking on a marker will take you to the selected locations current weather report.</h4>
                 <h4>When viewing a beach’s weather information tap “add” to save that beach to your list.</h4>
             </div>
-            
+            <Footer/>
         </div>
     )
 }

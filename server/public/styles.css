@@ -467,14 +467,38 @@ body, * {
       text-align: center;
       height: 20vh;
   }
+  .footerCont {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .ti {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 1rem;
+  }
+
+  .logo > img {
+      width: 7vw;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+  }
 
 @media screen and (max-width: 430px) {
+    .logo > img {
+        width: 20vw;    
+    }
     .mapInfo {
         height: 30vh;
     }
     .map {
         width: 95vw !important;
-        height: 45vh !important;
+        height: 35vh !important;
     }
 
     #eye1 , #eye2, #eye {

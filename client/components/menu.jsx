@@ -7,6 +7,7 @@ const Menu = (props) => {
     useEffect(() => {
         const links = document.querySelectorAll('.menI')
         const landingLogo = document.getElementById('landingLogo')
+        const footerLogo = document.getElementById('footerLogo')
         for (let i = 0; i < links.length; i++) {
             if (props.path === '/login') {
                 if (links[i].id === 'l') {
@@ -33,6 +34,9 @@ const Menu = (props) => {
              if (landingLogo) {
                 landingLogo.src = '/images/nmlogo.png'
              }
+             if (footerLogo) {
+                footerLogo.src = '/images/nmlogo.png'
+            }
         } else {
             document.body.style.background = 'white'
             var els = document.getElementsByTagName("*");
@@ -41,6 +45,9 @@ const Menu = (props) => {
              }
             if (landingLogo) {
                 landingLogo.src = '/images/logo4bw.png'
+            }
+            if (footerLogo) {
+                footerLogo.src = '/images/logo4bw.png'
             }
         }
         
