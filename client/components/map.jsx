@@ -125,6 +125,10 @@ const MapPage = (props) => {
     ])
     console.log(mx);
 
+    const onMarkerClick =  (marker) => {
+        props.setMInfo(marker)
+      };
+
     return (
         <div className='signUpCont'>
             <Menu path={props.match.path} setUser={props.setUser} user={props.user} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
@@ -136,6 +140,7 @@ const MapPage = (props) => {
                             key={index}
                             position={{ lat: marker.lat, lng: marker.lng}}
                             name={marker.name}
+                            onClick={() => onMarkerClick(marker)}
                             />
                         )
                     })
