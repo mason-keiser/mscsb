@@ -508,6 +508,7 @@ body, * {
   .weth {
       text-align: center;
       margin: 2rem 1rem 1rem 1rem;
+      font-size: x-large;
   }
 
 @media screen and (max-width: 430px) {

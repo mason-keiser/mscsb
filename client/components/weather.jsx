@@ -26,7 +26,7 @@ const Weather = (props) => {
         const i = document.getElementById('wIcon')
         if (weatherInfo) {
             if (weatherInfo.weather[0].description.includes('cloud')) {
-                i.src = '/images/clouds.png'
+                i.src = '/images/c.png'
             }
             if (weatherInfo.weather[0].description.includes('rain')) {
                 i.src = '/images/rain.png'
@@ -37,6 +37,9 @@ const Weather = (props) => {
             if (weatherInfo.weather[0].description.includes('clear')) {
                 i.src = '/images/moon.png'
             }
+            if (weatherInfo.weather[0].description.includes('sunny')) {
+                i.src = '/images/sun.png'
+            }
         } 
     }
 
@@ -45,7 +48,7 @@ const Weather = (props) => {
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <h2 className='sTitle'>{props.mInfo.name}</h2>
             <div className='w'>
-                <img src="" id='wIcon' alt=""/>
+                <img src="/images/logo4bw.png" id='wIcon' alt=""/>
             </div>
             {
                 (weatherInfo) ? (
