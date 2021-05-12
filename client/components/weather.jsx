@@ -43,6 +43,11 @@ const Weather = (props) => {
         } 
     }
 
+    const celsiusConverter = (val) => {
+        let valNum = parseFloat(val);
+        return Math.round((valNum * 1.8) + 32) + '°' ;
+    }
+
     return (
         <div className=''>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
@@ -52,7 +57,14 @@ const Weather = (props) => {
             </div>
             {
                 (weatherInfo) ? (
-                    <h1 className='weth'>{weatherInfo.weather[0].main}</h1>
+                    <div>
+                        <h1 className='weth'>{weatherInfo.weather[0].main}</h1>
+                        <div className='tempCont'>
+                            <h4>{celsiusConverter((weatherInfo.main.temp_min) - 2)}</h4>
+                            <h2>{celsiusConverter(weatherInfo.main.temp)}</h2>
+                            <h4>{celsiusConverter((weatherInfo.main.temp_max) + 2)}</h4>
+                        </div>
+                    </div>
                 )
                 : null
             }

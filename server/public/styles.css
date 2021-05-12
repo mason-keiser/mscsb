@@ -511,6 +511,25 @@ body, * {
       font-size: x-large;
   }
 
+  .tempCont {
+    display: flex;
+    justify-content: center;      
+}
+
+.tempCont h2, h4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.tempCont h2 {
+    font-size: xx-large;
+    margin-top: 1rem;
+}
+
+.tempCont h4 {
+    font-size: larger;
+}
+
 @media screen and (max-width: 430px) {
     #wIcon {
         height: unset;
