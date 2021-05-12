@@ -489,6 +489,24 @@ body, * {
       left: 0;
   }
 
+  .w {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  #wIcon {
+      width: 35vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .weth {
+      text-align: center;
+      margin: 2rem 1rem 1rem 1rem;
+  }
+
 @media screen and (max-width: 430px) {
     .logo > img {
         width: 20vw;    

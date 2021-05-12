@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Menu from './menu'
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import { googleApi } from './api';
 import Footer from './footer';
 
 const MapPage = (props) => {
+    const history = useHistory();
     const [mx] = useState([
         {
             lat: 33.542721,
@@ -127,6 +128,7 @@ const MapPage = (props) => {
 
     const onMarkerClick =  (marker) => {
         props.setMInfo(marker)
+        history.push("/weather")
       };
 
     return (
