@@ -545,7 +545,7 @@ body, * {
 .addBtn:hover {
     background: #0A2CDF;
     color: white;
-    opacity: 70%;
+   
 }
 
 @media screen and (max-width: 430px) {
