@@ -69,7 +69,7 @@ const Login = (props) => {
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <div className='loginCont'>
             <h2 className='sTitle'>Login</h2>
-                <form action="">
+                <form autoComplete='off'>
                     <div className='wrapper mt-3'>
                         <div className='input-data' id='e'>
                             <input onChange={handleChange} id='firstname' required type='text'/>

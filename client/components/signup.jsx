@@ -234,7 +234,7 @@ const SignUp = (props) => {
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <h2 className='sTitle'>Create Account</h2>
             <div className='swit'>
-                <form action="">
+                <form  autoComplete='off'>
                     <div className='wrapper mt-3'>
                         <div className='input-data' id='e'>
                             <input id='firstname' onChange={handleNameChange} required type='text'/>

@@ -449,6 +449,14 @@ body, * {
   .learn.nm {
       color: white;
   }
+  .map {
+      width: 90vw !important;
+      height: 40vh !important;
+      margin-top: 1rem;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
 
 @media screen and (max-width: 430px) {
     #eye1 , #eye2, #eye {
