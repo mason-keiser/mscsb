@@ -53,7 +53,7 @@ const Weather = (props) => {
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <h2 className='sTitle'>{props.mInfo.name}</h2>
             <div className='w'>
-                <img src='' onError={() => {this.style.display = 'none'}} alt='' id='wIcon' />
+                <img src='' alt='' id='wIcon' />
             </div>
             {
                 (weatherInfo) ? (
