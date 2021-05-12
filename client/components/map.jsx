@@ -6,7 +6,7 @@ import { googleApi } from './api';
 import Footer from './footer';
 
 const MapPage = (props) => {
-    const [mx, setMx] = useState([
+    const [mx] = useState([
         {
             lat: 33.542721,
             lng:  -117.785355,
@@ -132,7 +132,7 @@ const MapPage = (props) => {
     return (
         <div className='signUpCont'>
             <Menu path={props.match.path} setUser={props.setUser} user={props.user} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
-            <Map className='map' google={props.google} initialCenter={{lat: 33.542721, lng: -117.785355}} zoom={9}>
+            <Map className='map' google={props.google} initialCenter={{lat: 33.542721, lng: -117.785355}} zoom={10}>
                 {
                     mx.map((marker, index) => {
                         return (
