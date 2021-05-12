@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 
 const Footer = () => {
+    const history = useHistory();
+
+    const goHome = () => {
+        history.push("/")
+    } 
 
     return (
         <div className='footerCont'>
             <div className='logo'>
-                <img src="/images/logo4bw.png" alt="" id='footerLogo'/>
+                <img onClick={() => goHome()} src="/images/logo4bw.png" alt="" id='footerLogo'/>
             </div>
             <div className='ti'>MSCSB</div>
         </div>
