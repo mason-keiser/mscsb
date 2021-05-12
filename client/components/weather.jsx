@@ -52,12 +52,13 @@ const Weather = (props) => {
         <div className=''>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <h2 className='sTitle'>{props.mInfo.name}</h2>
-            <div className='w'>
-                <img src='' alt='' id='wIcon' />
-            </div>
+            
             {
                 (weatherInfo) ? (
                     <div>
+                        <div className='w'>
+                <img src='' alt='' id='wIcon' />
+            </div>
                         <h1 className='weth'>{weatherInfo.weather[0].main}</h1>
                         <div className='tempCont'>
                             <h4>{celsiusConverter((weatherInfo.main.temp_min) - 2)}</h4>
