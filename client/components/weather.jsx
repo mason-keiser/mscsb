@@ -61,7 +61,7 @@ const Weather = (props) => {
             {
                 (weatherInfo) ? (
                     <div>
-                        <div className='w'>
+                        <div className='w fadeIn '>
                             <img src='' alt='' id='wIcon' />
                         </div>
                         <h1 className='weth'>{weatherInfo.weather[0].main}</h1>

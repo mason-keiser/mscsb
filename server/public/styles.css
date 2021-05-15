@@ -568,6 +568,16 @@ body, * {
     font-size: 1.5rem;
 }
 
+.fadeIn {
+	animation: fadeIn 2s;
+  	opacity: 1;
+}
+
+@keyframes fadeIn {
+    0% {  opacity:0; }
+    100% { opacity: 1; }
+}
+
 @media screen and (max-width: 430px) {
     #wIcon {
         height: unset;
@@ -658,6 +668,9 @@ body, * {
 }
 
 @media screen and (max-width: 330px) {
+    .side {
+        font-size: small;
+    }
     .bottomWeathSection {
         margin-top: unset;
     }
@@ -728,6 +741,9 @@ body, * {
 }
 
 @media screen and (orientation: landscape) and (max-height: 340px) {
+    .side {
+        font-size: small;
+    }
     .menuBtn {
         position: sticky;
     }

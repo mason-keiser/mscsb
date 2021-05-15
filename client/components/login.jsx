@@ -67,7 +67,7 @@ const Login = (props) => {
     return (
         <div className=''>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
-            <div className='loginCont'>
+            <div className='loginCont fadeIn'>
             <h2 className='sTitle'>Login</h2>
                 <form autoComplete='off'>
                     <div className='wrapper mt-3'>

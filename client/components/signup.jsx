@@ -230,7 +230,7 @@ const SignUp = (props) => {
     }
 
     return (
-        <div className='signUpCont c'>
+        <div className='signUpCont c fadeIn'>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <h2 className='sTitle'>Create Account</h2>
             <div className='swit'>

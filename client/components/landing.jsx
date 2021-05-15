@@ -5,7 +5,7 @@ import Menu from './menu'
 const Landing = (props) => {
 
     return (
-        <div className='landingCont'>
+        <div className='landingCont fadeIn'>
             <div className='copyCont'>
                 <div className=''></div>
                 <h5 className=''> Mason Keiser  2021 ©</h5>

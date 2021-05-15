@@ -89,6 +89,7 @@ const Menu = (props) => {
     <div className='side shadow-lg' id='side'>
         <Link className='menI' id='l' to='/login'>Login</Link>
         <Link className='menI' id='s' to='/signup'>Sign Up</Link>
+        <div className='menI' id='lo'>My Beaches</div>
         <Link className='menI' id='m' to='/map'>View Beaches</Link>
         <div className='fas fa-chevron-up mt-2' id='menuUp' onClick={() => handleMenu()}></div>
     </div>

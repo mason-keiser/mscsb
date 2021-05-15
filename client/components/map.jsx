@@ -132,7 +132,7 @@ const MapPage = (props) => {
       };
 
     return (
-        <div className='signUpCont'>
+        <div className='signUpCont fadeIn'>
             <Menu path={props.match.path} setUser={props.setUser} user={props.user} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <Map className='map' google={props.google} initialCenter={{lat: 33.542721, lng: -117.785355}} zoom={10}>
                 {
