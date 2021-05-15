@@ -545,7 +545,26 @@ body, * {
 .addBtn:hover {
     background: #0A2CDF;
     color: white;
-   
+}
+
+.bottomWeathSection {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bRow, .tRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bar {
+    margin: 1rem;
+    font-size: 1.5rem;
 }
 
 @media screen and (max-width: 430px) {

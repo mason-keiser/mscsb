@@ -48,6 +48,11 @@ const Weather = (props) => {
         return Math.round((valNum * 1.8) + 32) + '°' ;
     }
 
+    if (weatherInfo) {
+        console.log(`${weatherInfo.wind.speed} mph`)
+        console.log(`${weatherInfo.clouds.all} clouds`)
+    }
+
     return (
         <div className=''>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
@@ -57,13 +62,25 @@ const Weather = (props) => {
                 (weatherInfo) ? (
                     <div>
                         <div className='w'>
-                <img src='' alt='' id='wIcon' />
-            </div>
+                            <img src='' alt='' id='wIcon' />
+                        </div>
                         <h1 className='weth'>{weatherInfo.weather[0].main}</h1>
                         <div className='tempCont'>
                             <h4>{celsiusConverter((weatherInfo.main.temp_min) - 2)}</h4>
                             <h2>{celsiusConverter(weatherInfo.main.temp)}</h2>
                             <h4>{celsiusConverter((weatherInfo.main.temp_max) + 2)}</h4>
+                        </div>
+                        <div className='bottomWeathSection'>                       
+                            <div className='tRow'>
+                                <h3>Wind Speed</h3>
+                                <div className='bar'>|</div>
+                                <h3>{weatherInfo.wind.speed} mph</h3>
+                            </div>
+                            <div className='bRow'>
+                                <h3>clouds</h3>
+                                <div className='bar'>|</div>
+                                <h3>{weatherInfo.clouds.all}</h3>
+                            </div>
                         </div>
                     </div>
                 )
