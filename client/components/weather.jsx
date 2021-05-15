@@ -74,7 +74,7 @@ const Weather = (props) => {
                             <div className='tRow'>
                                 <h3>Wind Speed</h3>
                                 <div className='bar'>|</div>
-                                <h3>{weatherInfo.wind.speed} mph</h3>
+                                <h3>{Math.round(weatherInfo.wind.speed)} mph</h3>
                             </div>
                             <div className='bRow'>
                                 <h3>Clouds  </h3>
