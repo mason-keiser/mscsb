@@ -730,7 +730,7 @@ body, * {
     }
     .side {
         height: 50vh;
-        top: -50vh;
+        top: -70vh;
     }
     .logoCont > img {
         width: 40vw;
