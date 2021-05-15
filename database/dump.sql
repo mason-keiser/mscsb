@@ -17,8 +17,11 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 ALTER TABLE IF EXISTS public.users ALTER COLUMN user_id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.beaches ALTER COLUMN beach_id DROP DEFAULT;
 DROP SEQUENCE IF EXISTS public.users_user_id_seq;
 DROP TABLE IF EXISTS public.users;
+DROP SEQUENCE IF EXISTS public.beaches_beach_id_seq;
+DROP TABLE IF EXISTS public.beaches;
 DROP EXTENSION IF EXISTS plpgsql;
 DROP SCHEMA IF EXISTS public;
 --
@@ -54,6 +57,39 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: beaches; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.beaches (
+    beach_id integer NOT NULL,
+    user_id integer NOT NULL,
+    beach_name character varying(500) NOT NULL,
+    beach_lat character varying(200) NOT NULL,
+    beach_long character varying(200) NOT NULL
+);
+
+
+--
+-- Name: beaches_beach_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.beaches_beach_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: beaches_beach_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.beaches_beach_id_seq OWNED BY public.beaches.beach_id;
+
+
+--
 -- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -86,10 +122,27 @@ ALTER SEQUENCE public.users_user_id_seq OWNED BY public.users.user_id;
 
 
 --
+-- Name: beaches beach_id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.beaches ALTER COLUMN beach_id SET DEFAULT nextval('public.beaches_beach_id_seq'::regclass);
+
+
+--
 -- Name: users user_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN user_id SET DEFAULT nextval('public.users_user_id_seq'::regclass);
+
+
+--
+-- Data for Name: beaches; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.beaches (beach_id, user_id, beach_name, beach_lat, beach_long) FROM stdin;
+1	4	Laguna Beach	33.542721	-117.785355
+2	9	Laguna Beach	33.542721	-117.785355
+\.
 
 
 --
@@ -100,6 +153,13 @@ COPY public.users (user_id, user_first_name, user_last_name, user_password) FROM
 4	Mason	Keiser	$2b$10$1WQaDmGXi7xD8.gL/TKGFuh5NnQXl6cXMkHdt79nahzL3iIrboJpS
 9	Guest	Guest	$2b$10$97hs8km7eC./6Iu0vezeHOKBmVdG169GRs8miDXyiNUY532sn456i
 \.
+
+
+--
+-- Name: beaches_beach_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.beaches_beach_id_seq', 2, true);
 
 
 --
