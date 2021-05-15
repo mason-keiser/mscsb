@@ -513,7 +513,8 @@ body, * {
 
   .tempCont {
     display: flex;
-    justify-content: center;      
+    justify-content: center;  
+    margin-left: 1rem;    
 }
 
 .tempCont h2, h4 {
@@ -657,6 +658,22 @@ body, * {
 }
 
 @media screen and (max-width: 330px) {
+    .bottomWeathSection {
+        margin-top: unset;
+    }
+
+    .mapInfo {
+        padding: 25px 20px;
+    }
+
+    .bRow, .tRow {
+        font-size: smaller;
+    }
+    
+    .wC .footerCont {
+        display: none;
+    }
+
     .input-data input:valid ~ label,
   .input-data  input:focus ~ label{
     
