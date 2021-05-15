@@ -547,6 +547,22 @@ body, * {
     background: #0A2CDF;
     color: white;
 }
+.rmvBtn {
+    position: fixed;
+    top: 35%;
+    right: 0;
+    border-top: 3px solid red;
+    border-left: 3px solid red;
+    border-bottom: 3px solid red;
+    padding: 1px 14px;   
+    color: red; 
+    cursor: pointer;
+}
+
+.rmvBtn:hover {
+    background: red;
+    color: white;
+}
 
 .bottomWeathSection {
     margin-top: 2rem;
@@ -632,6 +648,9 @@ body, * {
   }
 
 @media screen and (max-width: 430px) {
+    .rmvBtn {
+        top: 36%;
+    }
     #wIcon {
         height: unset;
         margin-top: unset;
@@ -772,6 +791,9 @@ body, * {
 }
 
 @media screen and (orientation: landscape) and (max-height: 440px) {
+    .rmvBtn {
+        top: 42%;
+    }
     .mapInfo {
         margin: 2rem;
     }

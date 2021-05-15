@@ -53,6 +53,22 @@ const Weather = (props) => {
         console.log(`${weatherInfo.clouds.all} clouds`)
     }
 
+    const add = () => {
+        const add = document.querySelector('.addBtn')
+        const rmv = document.querySelector('.rmvBtn')
+
+        rmv.style.display = 'unset'
+        add.style.display = 'none'
+    }
+
+    const rmv = () => {
+        const add = document.querySelector('.addBtn')
+        const rmv = document.querySelector('.rmvBtn')
+
+        rmv.style.display = 'none'
+        add.style.display = 'unset'
+    }
+
     return (
         <div className='wC'>
             <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
@@ -91,7 +107,8 @@ const Weather = (props) => {
                     </div>
                 ) 
             }
-            <div className='addBtn'>add</div>
+            <div className='addBtn fadeIn' onClick={() => add()}>add</div>
+            <div className='rmvBtn fadeIn' onClick={() => rmv()}>rmv</div>
             <Footer/>
         </div>
     )
