@@ -77,9 +77,9 @@ const Weather = (props) => {
                                 <h3>{weatherInfo.wind.speed} mph</h3>
                             </div>
                             <div className='bRow'>
-                                <h3>clouds</h3>
+                                <h3>Clouds  </h3>
                                 <div className='bar'>|</div>
-                                <h3>{weatherInfo.clouds.all}</h3>
+                                <h3>~ {weatherInfo.clouds.all}</h3>
                             </div>
                         </div>
                     </div>
