@@ -160,6 +160,31 @@ app.get('/api/getBeaches/:user_id', (req, res, next) => {
       });
 })
 
+// API TO REMOVE BEACH FROM SAVED LIST
+
+app.delete('/api/rmvBeach', (req, res, next) => {
+  const beach_id = req.body.beach_id;
+
+  const sql = `
+  DELETE FROM "beaches"
+  WHERE "beach_id" = $1
+  RETURNING *
+  `
+
+  db.query(sql, [beach_id])
+  .then(result => {
+    if (!result.rows[0]) {
+      return res.status(200).json({ message: `NO return array` });
+    } else {
+      return res.status(200).json(result.rows[0]);
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
+  });
+})
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
