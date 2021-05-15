@@ -105,6 +105,37 @@ app.get('/api/login/:user_first_name/:user_password/', (req, res, next) => {
     });
 });
 
+// API TO ADD SAVED BEACH TO USERS BEACHES
+
+app.post('/api/addBeach', (req, res, next) => {
+  const beachInfo = {
+    user_id: req.body.user_id,
+    beach_name: req.body.beach_name,
+    beach_lat: req.body.beach_lat, 
+    beach_long: req.body.beach_long
+  }
+
+  const sql = `
+  INSERT INTO "beaches" ("user_id", "beach_name", "beach_lat", "beach_long")
+  VALUES ($1, $2, $3, $4)
+  RETURNING * 
+  `
+  const params = [beachInfo.user_id, beachInfo.beach_name, beachInfo.beach_lat, beachInfo.beach_long]
+
+  db.query(sql, params) 
+      .then ((result) => {
+          if (!result.rows[0]) {
+            return res.status(400).json({ message: `No user information contains: ${firstname} or ${hashedPass.user_password}` });
+          } else {
+            return res.status(200).json(result.rows)
+          }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred.' });
+    });
+})
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });

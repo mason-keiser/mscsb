@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <div className='footerCont'>
             <div className='logo'>
-                <img onClick={() => goHome()} src="/images/logo4bw.png" alt="" id='footerLogo'/>
+                <img onClick={() => goHome()} src="/images/logo4bw.png" alt="" className='fadeIn' id='footerLogo'/>
             </div>
             <div className='ti'>MSCSB</div>
         </div>
