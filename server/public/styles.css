@@ -578,6 +578,58 @@ body, * {
     100% { opacity: 1; }
 }
 
+.errTit {
+    position: absolute;
+    top: 40%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.lds-ring {
+    margin-top: 3rem;
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    border: 8px solid #000000;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #0E0E0E transparent transparent transparent;
+  }
+
+  .lds-ring div.nm {
+ 
+    border: 8px solid white;
+    border-color: white transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
 @media screen and (max-width: 430px) {
     #wIcon {
         height: unset;
@@ -730,7 +782,7 @@ body, * {
     }
     .side {
         height: 50vh;
-        top: -70vh;
+        top: -60vh;
     }
     .logoCont > img {
         width: 40vw;

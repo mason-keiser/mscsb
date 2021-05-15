@@ -84,7 +84,12 @@ const Weather = (props) => {
                         </div>
                     </div>
                 )
-                : null
+                : (
+                    <div>
+                        <h3 className='errTit'>Loading Weather Report ...</h3>
+                        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                ) 
             }
             <div className='addBtn'>add</div>
             <Footer/>
