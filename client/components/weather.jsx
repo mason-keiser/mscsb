@@ -48,11 +48,6 @@ const Weather = (props) => {
         return Math.round((valNum * 1.8) + 32) + '°' ;
     }
 
-    if (weatherInfo) {
-        console.log(`${weatherInfo.wind.speed} mph`)
-        console.log(`${weatherInfo.clouds.all} clouds`)
-    }
-
     const add = () => {
         const add = document.querySelector('.addBtn')
         const rmv = document.querySelector('.rmvBtn')
@@ -90,7 +85,7 @@ const Weather = (props) => {
                             <div className='tRow'>
                                 <h3>Wind Speed</h3>
                                 <div className='bar'>|</div>
-                                <h3>{Math.round(weatherInfo.wind.speed)} mph</h3>
+                                <h3>{Math.round(((2.23694 * weatherInfo.wind.speed).toFixed(2)))} mph</h3>
                             </div>
                             <div className='bRow'>
                                 <h3>Clouds  </h3>
