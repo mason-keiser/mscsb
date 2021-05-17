@@ -26,7 +26,7 @@ const Menu = (props) => {
             }
         }
         if (props.nightMode) {
-            document.body.style.background = '#0E0E0E'
+
             var els = document.getElementsByTagName("*");
             for(var i = 0, all = els.length; i < all; i++){   
                  els[i].classList.add('nm');
@@ -38,16 +38,16 @@ const Menu = (props) => {
                 footerLogo.src = '/images/nmlogo.png'
             }
         } else {
-            document.body.style.background = 'white'
+   
             var els = document.getElementsByTagName("*");
             for(var i = 0, all = els.length; i < all; i++){   
                  els[i].classList.remove('nm');
              }
             if (landingLogo) {
-                landingLogo.src = '/images/logo4bw.png'
+                landingLogo.src = '/images/lightlogo.png'
             }
             if (footerLogo) {
-                footerLogo.src = '/images/logo4bw.png'
+                footerLogo.src = '/images/lightlogo.png'
             }
         }
         

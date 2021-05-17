@@ -3,6 +3,23 @@ body, * {
     margin: 0;
 }
 
+body {
+    background-image: linear-gradient(#fffffff1, #fffffff1), url('./images/download.png');
+    background-size:     cover;                   
+    background-repeat: repeat;
+    background-position: center center;
+}
+
+body.nm {
+    background-image: linear-gradient(#000000, #000000CC), url('./images/download-1.png');
+    background-size:     cover;                   
+    background-repeat:  repeat-y;;
+    height: 100vh;
+    width: 100vw;
+    background-position: center center;
+    
+}
+
 .landingCont::-webkit-scrollbar {
     display: none;
 }
@@ -468,6 +485,9 @@ body, * {
       height: 20vh;
   }
   .footerCont {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -648,6 +668,10 @@ body, * {
   }
 
 @media screen and (max-width: 430px) {
+    body.nm {
+        height: 100vh;
+        width: unset;
+    }
     .rmvBtn {
         top: 36%;
     }
@@ -661,7 +685,8 @@ body, * {
     }
     .mapInfo {
         height: 30vh;
-        font-size: small;
+        font-size: medium;
+        margin-top: 1rem;
     }
     .map {
         width: 95vw !important;
@@ -791,6 +816,10 @@ body, * {
 }
 
 @media screen and (orientation: landscape) and (max-height: 440px) {
+     body.nm {
+        height: unset;
+        width: unset;
+    }
     .rmvBtn {
         top: 42%;
     }
@@ -812,6 +841,19 @@ body, * {
     }
     .viewBtn {
         margin-bottom: 0.5rem;
+    }
+
+    .valCont {
+        height: 85vh;
+    }
+
+    .reqCont {
+        height: unset;
+    }
+
+    .swit {
+        align-items: baseline;
+        justify-content: space-evenly;
     }
 }
 
