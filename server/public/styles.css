@@ -684,7 +684,7 @@ body.nm {
     }
     .mapInfo {
         height: 30vh;
-        font-size: medium;
+        font-size: small;
         margin-top: 1rem;
     }
     .map {
