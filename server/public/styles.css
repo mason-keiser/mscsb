@@ -670,10 +670,7 @@ body.nm {
     .swit {
         align-items: center;
     }
-    body.nm {
-        height: 100vh;
-        width: unset;
-    }
+    
     .rmvBtn {
         top: 36%;
     }
@@ -818,10 +815,7 @@ body.nm {
 }
 
 @media screen and (orientation: landscape) and (max-height: 440px) {
-     body.nm {
-        height: unset;
-        width: unset;
-    }
+  
     .rmvBtn {
         top: 42%;
     }
