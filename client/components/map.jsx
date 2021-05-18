@@ -124,7 +124,6 @@ const MapPage = (props) => {
             name: 'Catalina Island'
         },
     ])
-    console.log(mx);
 
     const onMarkerClick =  (marker) => {
         props.setMInfo(marker)
@@ -143,6 +142,7 @@ const MapPage = (props) => {
                                 mx.map((marker, index) => {
                                     return (
                                         <Marker
+                                        icon={{url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}}
                                         key={index}
                                         position={{ lat: marker.lat, lng: marker.lng}}
                                         name={marker.name}
