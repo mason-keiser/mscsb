@@ -32,10 +32,10 @@ const Menu = (props) => {
                  els[i].classList.add('nm');
              }
              if (landingLogo) {
-                landingLogo.src = '/images/nmlogo.png'
+                landingLogo.src = '/images/dmlogo.png'
              }
              if (footerLogo) {
-                footerLogo.src = '/images/nmlogo.png'
+                footerLogo.src = '/images/dmlogo.png'
             }
         } else {
    
