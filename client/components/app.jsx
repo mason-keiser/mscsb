@@ -7,12 +7,13 @@ import MapPage from './map';
 import Weather from './weather';
 
 const App = () => {
+    const [nightMode, setNightMode] = useState(false)
+    const [mInfo, setMInfo] = useState(false);
+    const [myBeaches, setMyBeaches] = useState(false);
     const [user, setUser] = useState({
         user_id: 9,
         user_first_name: 'Guest'
-    })
-    const [nightMode, setNightMode] = useState(false)
-    const [mInfo, setMInfo] = useState(false);
+    });
 
     return (
         <Router>
