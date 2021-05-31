@@ -77,7 +77,7 @@ const Menu = (props) => {
         history.push("/");
     }
 
-    const sideterp = (props.user) 
+    const sideterp = (props.user.user_id !== 9) 
     ? (
     <div className='side shadow-lg' id='side'>
         <div className='menI' id='lo'>My Beaches</div>

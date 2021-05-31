@@ -48,9 +48,35 @@ const Weather = (props) => {
         return Math.round((valNum * 1.8) + 32) + '°' ;
     }
 
+    const addApi = () => {
+        const beachObj = {
+            user_id: props.user.user_id,
+            beach_name: props.mInfo.name,
+            beach_lat: props.mInfo.lat, 
+            beach_long: props.mInfo.lng,
+        }
+
+        if (!beachObj) return console.log('beach obj is falsy')
+
+        fetch('/api/addBeach', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(beachObj)
+        })
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return console.log(response.json());
+            }
+            })
+    }
+
     const add = () => {
         const add = document.querySelector('.addBtn')
         const rmv = document.querySelector('.rmvBtn')
+        
+        addApi()
 
         rmv.style.display = 'unset'
         add.style.display = 'none'
@@ -66,7 +92,7 @@ const Weather = (props) => {
 
     return (
         <div className='wC'>
-            <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
+            <Menu path={props.match.path} nightMode={props.nightMode} user={props.user} setNightMode={props.setNightMode}/>
             <h2 className='sTitle'>{props.mInfo.name}</h2>
             
             {
