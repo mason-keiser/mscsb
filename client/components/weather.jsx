@@ -82,9 +82,33 @@ const Weather = (props) => {
         add.style.display = 'none'
     }
 
+    const rmvApi = () => {
+        const beachObj = {
+            user_id: props.user.user_id,
+            beach_name: props.mInfo.name
+        }
+
+        if (!beachObj) return console.log('beach obj is falsy')
+
+        fetch('/api/rmvBeach', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(beachObj)
+        })
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return 
+            }
+        })
+    }
+
     const rmv = () => {
         const add = document.querySelector('.addBtn')
         const rmv = document.querySelector('.rmvBtn')
+
+        rmvApi()
 
         rmv.style.display = 'none'
         add.style.display = 'unset'
