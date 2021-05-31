@@ -67,9 +67,9 @@ const Weather = (props) => {
             if (response.status === 400 || response.status === 404) {
                 return null
             } else {
-                return console.log(response.json());
+                return 
             }
-            })
+        })
     }
 
     const add = () => {

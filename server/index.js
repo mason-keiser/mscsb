@@ -163,15 +163,17 @@ app.get('/api/getBeaches/:user_id', (req, res, next) => {
 // API TO REMOVE BEACH FROM SAVED LIST
 
 app.delete('/api/rmvBeach', (req, res, next) => {
-  const beach_id = req.body.beach_id;
+  const user_id = req.body.user_id;
+  const beach_name = req.body.beach_name; 
 
   const sql = `
   DELETE FROM "beaches"
-  WHERE "beach_id" = $1
+  WHERE "user_id" = $1
+  AND "beach_name" = $2
   RETURNING *
   `
 
-  db.query(sql, [beach_id])
+  db.query(sql, [user_id, beach_name])
   .then(result => {
     if (!result.rows[0]) {
       return res.status(200).json({ message: `NO return array` });
