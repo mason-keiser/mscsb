@@ -52,7 +52,7 @@ const App = () => {
                 <Route exact path='/signup' render={(props) => (<SignUp {...props} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
                 <Route exact path='/login' render={(props) => (<Login {...props} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
                 <Route exact path='/map' render={(props) => (<MapPage {...props} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
-                <Route exact path='/weather' render={(props) => (<Weather {...props} getBeaches={getBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
+                <Route exact path='/weather' render={(props) => (<Weather {...props} getBeaches={getBeaches} myBeaches={myBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
             </Switch>
         </Router>  
     )

@@ -114,6 +114,8 @@ const Weather = (props) => {
         add.style.display = 'unset'
     }
 
+
+
     return (
         <div className='wC'>
             <Menu path={props.match.path} nightMode={props.nightMode} user={props.user} setNightMode={props.setNightMode}/>
@@ -152,6 +154,9 @@ const Weather = (props) => {
                     </div>
                 ) 
             }
+            {
+
+            }   
             <div className='addBtn fadeIn' onClick={() => add()}>add</div>
             <div className='rmvBtn fadeIn' onClick={() => rmv()}>rmv</div>
             <Footer/>
