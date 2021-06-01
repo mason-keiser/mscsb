@@ -73,7 +73,10 @@ const Menu = (props) => {
     }
 
     const logout = () => {
-        props.setUser(false)
+        props.setUser({
+            user_id: 9,
+            user_first_name: 'Guest'
+        })
         history.push("/");
     }
 

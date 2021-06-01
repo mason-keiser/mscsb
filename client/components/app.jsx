@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Landing from './landing'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SignUp from './signup';
@@ -15,14 +15,44 @@ const App = () => {
         user_first_name: 'Guest'
     });
 
+    useEffect(() => {
+        getBeaches()
+    },[user])
+
+    const getBeaches = () => {
+        if (!user) return console.log('user falsy')
+        fetch('/api/getBeaches/'+ user.user_id, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json'}
+        }) 
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                    if (result.error) {
+                        setMyBeaches(null)
+                    } else {
+                        setMyBeaches(result)
+                    }
+                }
+        })
+    }
+
     return (
         <Router>
             <Switch>
                 <Route exact path='/' render={(props) => (<Landing {...props} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode}/>)}/>
-                <Route exact path='/signup' render={(props) => (<SignUp {...props} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
-                <Route exact path='/login' render={(props) => (<Login {...props} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
+                <Route exact path='/signup' render={(props) => (<SignUp {...props} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
+                <Route exact path='/login' render={(props) => (<Login {...props} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
                 <Route exact path='/map' render={(props) => (<MapPage {...props} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
-                <Route exact path='/weather' render={(props) => (<Weather {...props} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
+                <Route exact path='/weather' render={(props) => (<Weather {...props} getBeaches={getBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
             </Switch>
         </Router>  
     )

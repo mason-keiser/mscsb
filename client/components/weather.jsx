@@ -67,7 +67,7 @@ const Weather = (props) => {
             if (response.status === 400 || response.status === 404) {
                 return null
             } else {
-                return 
+                props.getBeaches()
             }
         })
     }
@@ -99,7 +99,7 @@ const Weather = (props) => {
             if (response.status === 400 || response.status === 404) {
                 return null
             } else {
-                return 
+                props.getBeaches()
             }
         })
     }

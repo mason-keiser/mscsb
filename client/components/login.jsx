@@ -57,7 +57,6 @@ const Login = (props) => {
                     if (!result) {
                         return null
                     } else {
-                        console.log(result)
                         props.setUser(result)
                         history.push("/map");
                     }
@@ -66,7 +65,7 @@ const Login = (props) => {
 
     return (
         <div className=''>
-            <Menu path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
+            <Menu user={props.user} path={props.match.path} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <div className='loginCont fadeIn'>
             <h2 className='sTitle'>Login</h2>
                 <form autoComplete='off'>
