@@ -53,8 +53,9 @@ const Weather = (props) => {
     }
 
     const addApi = () => {
+        let userTert = (!props.user[0]) ? props.user.user_id : props.user[0].user_id
         const beachObj = {
-            user_id: props.user.user_id,
+            user_id: userTert,
             beach_name: props.mInfo.name,
             beach_lat: props.mInfo.lat, 
             beach_long: props.mInfo.lng,
@@ -87,8 +88,9 @@ const Weather = (props) => {
     }
 
     const rmvApi = () => {
+        let userTert = (!props.user[0]) ? props.user.user_id : props.user[0].user_id
         const beachObj = {
-            user_id: props.user.user_id,
+            user_id: userTert,
             beach_name: props.mInfo.name
         }
 
@@ -148,9 +150,9 @@ const Weather = (props) => {
                         </div>
                         <h1 className='weth'>{weatherInfo.weather[0].main}</h1>
                         <div className='tempCont'>
-                            <h4>{celsiusConverter((weatherInfo.main.temp_min) - 2)}</h4>
+                            <h4>{celsiusConverter((weatherInfo.main.temp_min))}</h4>
                             <h2>{celsiusConverter(weatherInfo.main.temp)}</h2>
-                            <h4>{celsiusConverter((weatherInfo.main.temp_max) + 2)}</h4>
+                            <h4>{celsiusConverter((weatherInfo.main.temp_max) )}</h4>
                         </div>
                         <div className='bottomWeathSection'>                       
                             <div className='tRow'>

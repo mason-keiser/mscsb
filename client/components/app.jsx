@@ -25,7 +25,8 @@ const App = () => {
 
     const getBeaches = () => {
         if (!user) return console.log('user falsy')
-        fetch('/api/getBeaches/'+ user.user_id, {
+        let userTert = (!user[0]) ? user.user_id : user[0].user_id
+        fetch('/api/getBeaches/'+ userTert, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json'}
         }) 
