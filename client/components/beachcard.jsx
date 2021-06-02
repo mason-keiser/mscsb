@@ -4,7 +4,12 @@ const BeachCard = (props) => {
 
     return (
         <div>
-            {props.beach.beach_name}
+            <div className='bc'>
+                <div>{props.beach.beach_name}</div>
+                <div>73°F</div>
+                <div>sunny img</div>
+            </div>
+            
         </div>
     )
 }
