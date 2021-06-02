@@ -19,6 +19,10 @@ const App = () => {
         getBeaches()
     },[user])
 
+    useEffect(() => {
+        getBeaches()
+    }, []) 
+
     const getBeaches = () => {
         if (!user) return console.log('user falsy')
         fetch('/api/getBeaches/'+ user.user_id, {
