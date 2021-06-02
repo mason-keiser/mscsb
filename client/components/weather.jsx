@@ -12,6 +12,10 @@ const Weather = (props) => {
     }, [weatherInfo])
 
     useEffect(() => {
+        tert()
+    }, [props.myBeaches])
+
+    useEffect(() => {
         if (props.mInfo.name) {
             fetch(`${api.baseurl}weather?lat=${props.mInfo.lat}&lon=${props.mInfo.lng}&units=metric&appid=${api.key}`)
                 .then(res => res.json())
@@ -114,7 +118,22 @@ const Weather = (props) => {
         add.style.display = 'unset'
     }
 
-
+    const tert = () => {
+        const add = document.querySelector('.addBtn')
+        const rmv = document.querySelector('.rmvBtn')
+        if (!props.myBeaches) {
+            rmv.style.display = 'none'
+            add.style.display = 'unset'
+            return 
+        }
+        if(props.myBeaches.some(beach => beach.beach_name === props.mInfo.name)){
+            rmv.style.display = 'unset'
+            add.style.display = 'none'
+        } else{
+            rmv.style.display = 'none'
+            add.style.display = 'unset'
+        }
+    }
 
     return (
         <div className='wC'>
@@ -155,10 +174,11 @@ const Weather = (props) => {
                 ) 
             }
             {
-
+                <div>
+                    <div className='rmvBtn fadeIn' onClick={() => rmv()}>rmv</div>
+                    <div className='addBtn fadeIn' onClick={() => add()}>add</div>
+                </div>
             }   
-            <div className='addBtn fadeIn' onClick={() => add()}>add</div>
-            <div className='rmvBtn fadeIn' onClick={() => rmv()}>rmv</div>
             <Footer/>
         </div>
     )
