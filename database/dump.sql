@@ -140,8 +140,10 @@ ALTER TABLE ONLY public.users ALTER COLUMN user_id SET DEFAULT nextval('public.u
 --
 
 COPY public.beaches (beach_id, user_id, beach_name, beach_lat, beach_long) FROM stdin;
-1	4	Laguna Beach	33.542721	-117.785355
-2	9	Laguna Beach	33.542721	-117.785355
+20	9	San Clemente	33.427353	-117.612602
+26	9	Huntington Beach	33.659485	-117.998802
+28	9	Long Beach	33.77005	-118.193741
+29	9	Carlsbad	33.166039	-117.337929
 \.
 
 
@@ -152,6 +154,7 @@ COPY public.beaches (beach_id, user_id, beach_name, beach_lat, beach_long) FROM 
 COPY public.users (user_id, user_first_name, user_last_name, user_password) FROM stdin;
 4	Mason	Keiser	$2b$10$1WQaDmGXi7xD8.gL/TKGFuh5NnQXl6cXMkHdt79nahzL3iIrboJpS
 9	Guest	Guest	$2b$10$97hs8km7eC./6Iu0vezeHOKBmVdG169GRs8miDXyiNUY532sn456i
+10	jim	bean	$2b$10$AXadqQXzp0/ofkX8gOB9TeV6PITmw/HeQ3jpuGajWWKY3FdFp./HK
 \.
 
 
@@ -159,14 +162,14 @@ COPY public.users (user_id, user_first_name, user_last_name, user_password) FROM
 -- Name: beaches_beach_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.beaches_beach_id_seq', 2, true);
+SELECT pg_catalog.setval('public.beaches_beach_id_seq', 30, true);
 
 
 --
 -- Name: users_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_user_id_seq', 9, true);
+SELECT pg_catalog.setval('public.users_user_id_seq', 10, true);
 
 
 --
