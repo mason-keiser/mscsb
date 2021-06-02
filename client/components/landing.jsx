@@ -17,7 +17,7 @@ const Landing = (props) => {
             <Menu path={props.match.path} setUser={props.setUser} user={props.user} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             <div className='logoCont'>
                 <img src="/images/lightlogo.png" alt="" id='landingLogo'/>
-                <Link to='/map' >View Beaches</Link>
+                <Link to='/map'>View Beaches</Link>
             </div>
         </div>
     )

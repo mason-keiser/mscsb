@@ -5,6 +5,7 @@ import SignUp from './signup';
 import Login from './login';
 import MapPage from './map';
 import Weather from './weather';
+import MyBeaches from './myBeaches';
 
 const App = () => {
     const [nightMode, setNightMode] = useState(false)
@@ -58,6 +59,7 @@ const App = () => {
                 <Route exact path='/login' render={(props) => (<Login {...props} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
                 <Route exact path='/map' render={(props) => (<MapPage {...props} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
                 <Route exact path='/weather' render={(props) => (<Weather {...props} getBeaches={getBeaches} myBeaches={myBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
+                <Route exact path='/mybeaches' render={(props) => (<MyBeaches {...props} getBeaches={getBeaches} myBeaches={myBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
             </Switch>
         </Router>  
     )

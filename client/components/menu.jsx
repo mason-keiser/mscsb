@@ -13,7 +13,11 @@ const Menu = (props) => {
                 if (links[i].id === 'l') {
                     links[i].style.color = '#0A2CDF'
                 }
-            } if (props.path === '/signup'){
+            } if(props.path === '/mybeaches') {
+                if (links[i].id === 'lo') {
+                    links[i].style.color = '#0A2CDF'
+                }
+            }if (props.path === '/signup'){
                 if (links[i].id === 's') {
                     links[i].style.color = '#0A2CDF'
                 }
@@ -83,17 +87,17 @@ const Menu = (props) => {
     const sideterp = (props.user.user_id !== 9) 
     ? (
     <div className='side shadow-lg' id='side'>
-        <div className='menI' id='lo'>My Beaches</div>
-        <Link className='menI' id='m' to='/map'>View Beaches</Link>
-        <div className='menI' id='lo' onClick={() => logout()}>Logout</div>
+        <Link className='menI' id='lo' to='/mybeaches'>My Beaches</Link>
+        <Link className='menI' id='m' to='/map'>View Map</Link>
+        <div className='menI' id='logout' onClick={() => logout()}>Logout</div>
         <div className='fas fa-chevron-up mt-2' id='menuUp' onClick={() => handleMenu()}></div>
     </div>
     )  : (
     <div className='side shadow-lg' id='side'>
         <Link className='menI' id='l' to='/login'>Login</Link>
         <Link className='menI' id='s' to='/signup'>Sign Up</Link>
-        <div className='menI' id='lo'>My Beaches</div>
-        <Link className='menI' id='m' to='/map'>View Beaches</Link>
+        <Link className='menI' id='lo' to='/mybeaches'>My Beaches</Link>
+        <Link className='menI' id='m' to='/map'>View Map</Link>
         <div className='fas fa-chevron-up mt-2' id='menuUp' onClick={() => handleMenu()}></div>
     </div>
     )

@@ -75,7 +75,7 @@ body.nm {
 }
 
 .copyCont > h5 {
-    font-size: small;
+    font-size: medium;
     margin-left: 5px;
 }
 
@@ -105,7 +105,7 @@ body.nm {
     margin-left: 5px;
     text-decoration: none;
     color: black;
-    font-size: small;
+    font-size: medium;
 }
 
 .shopCont > a.nm {
@@ -666,6 +666,11 @@ body.nm {
     }
   }
 
+  #logout:hover {
+      cursor: pointer;
+      opacity: 70%;
+  }
+
 @media screen and (max-width: 430px) {
     .swit {
         align-items: center;
@@ -862,5 +867,15 @@ body.nm {
     }
     .logoCont > img {
         width: 35vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .copyCont > h5 {
+        font-size: medium;
+    }
+
+    .shopCont > a {
+        font-size: medium;
     }
 }

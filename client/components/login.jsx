@@ -58,7 +58,7 @@ const Login = (props) => {
                         return null
                     } else {
                         props.setUser(result)
-                        history.push("/map");
+                        history.push("/mybeaches");
                     }
                 })
     }
