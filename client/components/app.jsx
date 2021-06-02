@@ -55,11 +55,11 @@ const App = () => {
         <Router>
             <Switch>
                 <Route exact path='/' render={(props) => (<Landing {...props} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode}/>)}/>
-                <Route exact path='/signup' render={(props) => (<SignUp {...props} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
-                <Route exact path='/login' render={(props) => (<Login {...props} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
-                <Route exact path='/map' render={(props) => (<MapPage {...props} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
-                <Route exact path='/weather' render={(props) => (<Weather {...props} getBeaches={getBeaches} myBeaches={myBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
-                <Route exact path='/mybeaches' render={(props) => (<MyBeaches {...props} getBeaches={getBeaches} myBeaches={myBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
+                <Route exact path='/signup' render={(props) => (<SignUp {...props} setMyBeaches={setMyBeaches} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
+                <Route exact path='/login' render={(props) => (<Login {...props} setMyBeaches={setMyBeaches} getBeaches={getBeaches} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} setUser={setUser}/>)}/>
+                <Route exact path='/map' render={(props) => (<MapPage {...props} setMyBeaches={setMyBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
+                <Route exact path='/weather' render={(props) => (<Weather {...props} setMyBeaches={setMyBeaches} getBeaches={getBeaches} myBeaches={myBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
+                <Route exact path='/mybeaches' render={(props) => (<MyBeaches {...props} setMyBeaches={setMyBeaches} getBeaches={getBeaches} myBeaches={myBeaches} mInfo={mInfo} setMInfo={setMInfo} setUser={setUser} user={user} nightMode={nightMode} setNightMode={setNightMode} user={user}/>)}/>
             </Switch>
         </Router>  
     )

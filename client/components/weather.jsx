@@ -139,7 +139,7 @@ const Weather = (props) => {
 
     return (
         <div className='wC'>
-            <Menu path={props.match.path} nightMode={props.nightMode} user={props.user} setNightMode={props.setNightMode}/>
+            <Menu setMyBeaches={props.setMyBeaches} path={props.match.path} nightMode={props.nightMode} user={props.user} setNightMode={props.setNightMode}/>
             <h2 className='sTitle'>{props.mInfo.name}</h2>
             
             {

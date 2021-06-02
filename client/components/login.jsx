@@ -33,6 +33,7 @@ const Login = (props) => {
     }
 
     const login = () => {
+        props.setMyBeaches(null)
         let loginInfo = {
             user_first_name: name,
             user_password: pass

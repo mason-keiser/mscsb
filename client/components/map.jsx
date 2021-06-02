@@ -132,7 +132,7 @@ const MapPage = (props) => {
 
     return (
         <div className='signUpCont fadeIn'>
-             <Menu path={props.match.path} setUser={props.setUser} user={props.user} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
+             <Menu setMyBeaches={props.setMyBeaches} path={props.match.path} setUser={props.setUser} user={props.user} nightMode={props.nightMode} setNightMode={props.setNightMode}/>
             {
                 (props.google)
                 ? (
