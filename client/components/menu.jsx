@@ -42,7 +42,6 @@ const Menu = (props) => {
                 footerLogo.src = '/images/dmlogo.png'
             }
         } else {
-   
             var els = document.getElementsByTagName("*");
             for(var i = 0, all = els.length; i < all; i++){   
                  els[i].classList.remove('nm');

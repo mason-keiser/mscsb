@@ -679,13 +679,10 @@ body.nm {
     align-items: center;
     margin: 1rem;
     padding: 1rem;
-    background: white;
+ 
     box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;;
   }
 
-  .bc.nm {
-    background: #0e0e0e;
-  }
 
   .bc > div {
     width: 33.3vw;
@@ -699,7 +696,22 @@ body.nm {
       align-items: center;
   }
 
+  #wImg {
+      width: 30%;
+  }
+
+  #bcTemp {
+      font-size: x-large;
+  }
+
 @media screen and (max-width: 430px) {
+    #bcTemp {
+        font-size: larger;
+    }
+    #wImg {
+        width: 60%;
+    }
+
     .bc {
         width: 80vw;
     }
