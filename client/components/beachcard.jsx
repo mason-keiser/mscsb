@@ -30,7 +30,7 @@ const BeachCard = (props) => {
                 } else if (img[i].classList.contains('mist')) {
                     img[i].src = '/images/cloud.png'
                 } else if (img[i].classList.contains('clear')) {
-                    img[i].src = '/images/moon.png'
+                    img[i].src = '/images/sun.png'
                 } else if (img[i].classList.contains('sunny')) {
                     img[i].src = '/images/sun.png'
                 } else {
