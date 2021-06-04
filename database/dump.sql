@@ -144,6 +144,8 @@ COPY public.beaches (beach_id, user_id, beach_name, beach_lat, beach_long) FROM 
 26	9	Huntington Beach	33.659485	-117.998802
 28	9	Long Beach	33.77005	-118.193741
 29	9	Carlsbad	33.166039	-117.337929
+31	9	Dana Point	33.467224	-117.698097
+32	9	Redondo Beach	33.84498	-118.38724
 \.
 
 
@@ -162,7 +164,7 @@ COPY public.users (user_id, user_first_name, user_last_name, user_password) FROM
 -- Name: beaches_beach_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.beaches_beach_id_seq', 30, true);
+SELECT pg_catalog.setval('public.beaches_beach_id_seq', 32, true);
 
 
 --
