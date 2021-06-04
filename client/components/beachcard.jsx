@@ -14,6 +14,7 @@ const BeachCard = (props) => {
                 .then(res => res.json())
                 .then(result => {
                     setW(result)
+                    iconChanger()
                 })
         }
     },[])
@@ -22,22 +23,17 @@ const BeachCard = (props) => {
         const img = document.querySelectorAll('#wImg')
         for (let i = 0; i < img.length; i ++) {
             if (w) {
-                if (w.weather[0].description.includes('cloud')) {
+                if (img[i].classList.contains('cloud')) {
                     img[i].src = '/images/c.png'
-                }
-                if (w.weather[0].description.includes('rain')) {
+                } else if (img[i].classList.contains('rain')) {
                     img[i].src = '/images/rain.png'
-                }
-                if (w.weather[0].description.includes('mist')) {
+                } else if (img[i].classList.contains('mist')) {
                     img[i].src = '/images/cloud.png'
-                }
-                if (w.weather[0].description.includes('clear')) {
+                } else if (img[i].classList.contains('clear')) {
                     img[i].src = '/images/moon.png'
-                }
-                if (w.weather[0].description.includes('sunny')) {
+                } else if (img[i].classList.contains('sunny')) {
                     img[i].src = '/images/sun.png'
-                }
-                else  {
+                } else {
                     img[i].src = '/images/c.png'
                 }
             } 
@@ -60,7 +56,7 @@ const BeachCard = (props) => {
                         <div>{props.beach.beach_name}</div>
                         <div id='bcTemp'>{celsiusConverter(w.main.temp)}F</div>
                         <div className='fadeIn '>
-                            <img src='' alt='' id='wImg' />
+                            <img src='' alt='' className={w.weather[0].description} id='wImg' />
                         </div>
                     </div>
                 </div>
