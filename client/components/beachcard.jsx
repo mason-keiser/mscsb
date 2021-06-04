@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import api from './api'
+import { useHistory } from 'react-router-dom'
 
 const BeachCard = (props) => {
     const [w, setW] = useState();
+    const history = useHistory()
 
     useEffect(() => {
         iconChanger()
@@ -47,12 +49,22 @@ const BeachCard = (props) => {
 
     const styleTerp = (props.nm) ? '#0e0e0e' : 'white'
 
+    const onWeatherClick = () => {
+        let weth = {
+            lat: props.beach.beach_lat,
+            lng: props.beach.beach_long,
+            name: props.beach.beach_name
+        }
+        props.setMInfo(weth)
+        history.push("/weather")
+      };
+
     return (
         <div className='bco'>
             {
                 (w) ? (
                 <div>
-                    <div className='bc' style={{background: styleTerp}}>
+                    <div className='bc' onClick={() => onWeatherClick()} style={{background: styleTerp}}>
                         <div>{props.beach.beach_name}</div>
                         <div id='bcTemp'>{celsiusConverter(w.main.temp)}F</div>
                         <div className='fadeIn '>

@@ -12,7 +12,8 @@ const MyBeaches = (props) => {
                     <div className='singPost'>
                         <BeachCard
                             beach={beach}
-                            nm = {props.nightMode}
+                            nm={props.nightMode}
+                            setMInfo={props.setMInfo}
                         />
                     </div>
                 </div>
