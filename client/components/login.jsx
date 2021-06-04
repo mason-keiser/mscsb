@@ -59,7 +59,7 @@ const Login = (props) => {
                         return null
                     } else {
                         props.setUser(result)
-                        history.push("/mybeaches");
+                        history.push("/map");
                     }
                 })
     }

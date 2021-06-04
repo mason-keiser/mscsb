@@ -20,7 +20,17 @@ const MyBeaches = (props) => {
             );
         })
     )
-    : null
+    : (
+        <div className='dd'>
+            <h3 className='errTit'>No Saved Beaches</h3>
+            <h4 className='subTit'>Visit Map Page and select a beach to add one to your list</h4>
+            <div className="snippet" data-title=".dot-pulse">
+                <div className="stage">
+                    <div className="dot-pulse"></div>
+                </div>
+            </div>
+        </div>
+    ) 
 
 
     return (

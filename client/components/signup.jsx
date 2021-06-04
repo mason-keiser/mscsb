@@ -63,7 +63,7 @@ const SignUp = (props) => {
                     console.log(result)
                     props.setUser(result)
                     props.getBeaches()
-                    history.push("/mybeaches");
+                    history.push("/map");
                 }
             })
     }
