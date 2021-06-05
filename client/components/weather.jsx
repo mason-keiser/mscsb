@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import Menu from './menu'
 import Footer from './footer';
 import api from './api'
+import { useHistory } from 'react-router-dom'
 
 const Weather = (props) => {
     const [weatherInfo, setWeatherInfo] = useState();
+    const history = useHistory()
 
     useEffect(() => {
         iconChanger()
@@ -85,6 +87,8 @@ const Weather = (props) => {
 
         rmv.style.display = 'unset'
         add.style.display = 'none'
+
+        history.push("/mybeaches")
     }
 
     const rmvApi = () => {

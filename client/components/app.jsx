@@ -45,7 +45,7 @@ const App = () => {
                     if (result.error) {
                         setMyBeaches(null)
                     } else {
-                        setMyBeaches(result)
+                        setMyBeaches(result.reverse())
                     }
                 }
         })
