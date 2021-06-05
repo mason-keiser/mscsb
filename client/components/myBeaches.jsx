@@ -35,7 +35,7 @@ const MyBeaches = (props) => {
 
     return (
         <div>
-            <Menu setMyBeaches={props.setMyBeaches} path={props.match.path} nightMode={props.nightMode} user={props.user} setNightMode={props.setNightMode}/>
+            <Menu setMyBeaches={props.setMyBeaches} path={props.match.path} nightMode={props.nightMode} user={props.user} setUser={props.setUser} setNightMode={props.setNightMode}/>
             <h2 className='sTitle mb-4'>{userTert} Beaches</h2>
             <div id='bCont' className='row-cols-lg-3'>
                 {items}
