@@ -991,7 +991,29 @@ body.nm {
     }
 
     .valCont {
-        height: 85vh;
+        height: 92vh;
+    }
+
+    .wrapper .input-data label {
+      bottom: -20px;
+    }
+
+   
+    #eye1 , #eye2, #eye {
+      bottom: -15px;
+    }
+
+    .signupBtn {
+      width: 20vw;
+      height: 10vh;
+    }
+
+    .valCont {
+      width: 45vw;
+    }
+
+    .loginCont {
+      margin-top: 5rem;
     }
 
     .reqCont {
@@ -1013,6 +1035,32 @@ body.nm {
     }
     .logoCont > img {
         width: 35vw;
+    }
+
+    .valCont {
+      width: 55vw;
+      height: 108vh;
+    }
+
+    .wrapper .input-data input {
+      font-size: small;
+    }
+
+    .input-data input:valid ~ label,
+     .input-data input:focus ~ label {
+      transform: translateY(-20px);
+      font-size: small;
+    }
+
+    .loginCont {
+      margin-top: 8rem;
+    }
+    .signupBtn {
+      width: 25vw;
+    }
+
+    .wrapper .input-data label {
+      font-size: small;
     }
 }
 
