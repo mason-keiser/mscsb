@@ -9,6 +9,9 @@ const Weather = (props) => {
     const [weatherInfo, setWeatherInfo] = useState();
     const history = useHistory()
 
+    const d = new Date();
+    const hours = d.getHours()
+
     useEffect(() => {
         iconChanger()
     }, [weatherInfo])
@@ -41,7 +44,11 @@ const Weather = (props) => {
                 i.src = '/images/cloud.png'
             }
             if (weatherInfo.weather[0].description.includes('clear')) {
-                i.src = '/images/sun.png'
+                if (hours <= 3 || hours >= 20) {
+                    i.src = '/images/moon.png'
+                } else {
+                    i.src = '/images/sun.png'
+                }
             }
             if (weatherInfo.weather[0].description.includes('sunny')) {
                 i.src = '/images/sun.png'
