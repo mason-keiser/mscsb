@@ -86,7 +86,7 @@ const Login = (props) => {
                     </div>
                 </form>
                 <Link className='gotosu' to='/signup'>Create Account</Link>
-                <Link className='learn' to='/'>Learn About This Application</Link>
+                <div className='learn'>My Southern California Surf Buddy 2021 ©</div>
             </div>
         </div>
     )
