@@ -16,8 +16,8 @@ Link: https://mscsb.masonkeiser.com/
 * Bootstrap 4
 * AWS EC2
 # Features
-* User can view weather of current location
 * User can click on a marker to view the weather at the selected Southern California beach
+* User can add or remove a beach from their saved beaches list
 # Development
 ## System Requirements
 * Node.js 10 or higher
