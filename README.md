@@ -1,5 +1,5 @@
 # My Southern California Surf Buddy
-An application for users to find the nearest beach in SoCal and display the weather at the beach selected by the user.
+An application for users to view the weather for all the main Southern California surf spots.
 
 * Utilizes Google Maps API and OpenWeatherMaps API
 
