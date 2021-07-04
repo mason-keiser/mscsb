@@ -1,5 +1,5 @@
 # My Southern California Surf Buddy
-An application for users to view the weather for all the main Southern California surf spots.
+An application for users to view weather data for all the primary Southern California surf spots.
 
 * Utilizes Google Maps API and OpenWeatherMaps API
 
